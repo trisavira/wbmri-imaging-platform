@@ -42,8 +42,7 @@ export function Technology() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <motion.div style={{ y: imageY }} className="relative rounded-2xl overflow-hidden"
-              style={{ border: "1px solid rgba(207,69,32,0.2)", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}
+            <motion.div style={{ y: imageY, border: "1px solid rgba(207,69,32,0.2)", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }} className="relative rounded-2xl overflow-hidden"
             >
               <ImageWithFallback src={PATIENT_URL} alt="Patient in WB-MRI scanner" className="w-full object-cover" style={{ height: "300px", filter: "saturate(0.85)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #f8f9fb 0%, transparent 50%)" }} />
