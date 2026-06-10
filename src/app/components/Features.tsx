@@ -1,16 +1,12 @@
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
-import { Brain, ScanLine, BarChart3, Network, Clock, Layers, Shield, RefreshCcw } from "lucide-react";
+import { Brain, ScanLine, BarChart3, Network } from "lucide-react";
 
 const features = [
-  { icon: ScanLine,   num: "01", title: "Whole-Body Coverage",      description: "Vertex to toes in a single exam. Optimized acquisition protocols cover all anatomical regions with consistent diagnostic quality.", color: "#e7751d" },
-  { icon: Brain,      num: "02", title: "AI-Assisted Detection",    description: "Deep learning trained on 500K+ annotated cases automatically flags lesions, measures volumes, and tracks longitudinal change.", color: "#cf4520" },
-  { icon: BarChart3,  num: "03", title: "Quantitative Biomarkers",  description: "ADC maps, fat fraction, T1/T2 relaxometry — standardized, reproducible measurements for objective disease monitoring.", color: "#b31b1b" },
-  { icon: Network,    num: "04", title: "PACS Integration",          description: "Native DICOM, HL7 FHIR, and REST API connectivity to existing PACS, RIS, and EHR systems with zero workflow disruption.", color: "#cf4520" },
-  { icon: Clock,      num: "05", title: "Rapid Structured Reports", description: "Pre-populated findings, lesion maps, volume measurements, and comparison deltas ready for radiologist review in minutes.", color: "#e7751d" },
-  { icon: Layers,     num: "06", title: "Multi-Parametric Protocol", description: "DWI, DCE, Dixon, STIR — an adaptive protocol suite that covers oncology, inflammatory, and screening indications in one session.", color: "#b31b1b" },
-  { icon: Shield,     num: "07", title: "Radiation-Free Imaging",   description: "Eliminate cumulative radiation exposure. Safe for serial monitoring, pediatric imaging, and radiation-sensitive patients.", color: "#e7751d" },
-  { icon: RefreshCcw, num: "08", title: "Longitudinal Tracking",    description: "Automated co-registration and side-by-side comparisons across time points to visualize treatment response at a glance.", color: "#cf4520" },
+  { icon: ScanLine,   num: "01", title: "Whole-Body Coverage",     description: "Vertex to toes in a single exam with consistent diagnostic quality across all anatomical regions.", color: "#e7751d" },
+  { icon: Brain,      num: "02", title: "AI-Assisted Detection",   description: "Deep learning trained on 500K+ cases automatically flags lesions, measures volumes, and tracks change.", color: "#cf4520" },
+  { icon: BarChart3,  num: "03", title: "Quantitative Biomarkers", description: "Standardized ADC maps, fat fraction, and T1/T2 relaxometry for objective, reproducible monitoring.", color: "#b31b1b" },
+  { icon: Network,    num: "04", title: "PACS Integration",        description: "Native DICOM, HL7 FHIR, and REST API connectivity with zero disruption to your existing workflow.", color: "#cf4520" },
 ];
 
 export function Features() {
@@ -20,7 +16,7 @@ export function Features() {
   const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section id="platform" ref={ref} className="relative py-28 overflow-hidden" style={{ background: "#f8f9fb" }}>
+    <section id="platform" ref={ref} className="relative py-16 overflow-hidden" style={{ background: "#f8f9fb" }}>
       {/* Animated gradient top border */}
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.5) 30%, rgba(231,117,29,0.8) 50%, rgba(207,69,32,0.5) 70%, transparent)" }}
@@ -34,7 +30,7 @@ export function Features() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="mb-10"
         >
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
@@ -62,7 +58,7 @@ export function Features() {
                 className="group relative p-7 cursor-default bg-white overflow-hidden"
                 style={{
                   borderRight: (i % 4 !== 3) ? "1px solid rgba(0,0,0,0.08)" : "none",
-                  borderBottom: i < 4 ? "1px solid rgba(0,0,0,0.08)" : "none",
+                  borderBottom: "none",
                 }}
                 whileHover={{ backgroundColor: "#fafafa" }}
               >

@@ -6,13 +6,6 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 const SCANNER_URL =
   "https://images.unsplash.com/photo-1666214280165-20e3d73d70bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxyYWRpb2xvZ2lzdCUyMGRvY3RvciUyME1SSSUyMHNjYW4lMjByZXZpZXclMjBtZWRpY2FsJTIwaW1hZ2luZ3xlbnwxfHx8fDE3ODA5MzI1ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080";
 
-const stats = [
-  { value: "<45 min", label: "Whole-body acquisition" },
-  { value: "98.3%", label: "Detection sensitivity" },
-  { value: "500K+", label: "Annotated training cases" },
-  { value: "Zero", label: "Ionizing radiation" },
-];
-
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
@@ -100,24 +93,6 @@ export function Hero() {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.62 }}
-          className="grid grid-cols-2 gap-4 mt-10 pt-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
-        >
-          {stats.map((s, i) => (
-            <motion.div key={i}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 + i * 0.08 }}
-            >
-              <div className="text-transparent bg-clip-text" style={{ fontSize: "22px", fontWeight: 700, backgroundImage: "linear-gradient(135deg, #ffffff 60%, #94a3b8 100%)", letterSpacing: "-0.02em" }}>{s.value}</div>
-              <div style={{ fontSize: "11px", color: "#4a576b", marginTop: "3px", letterSpacing: "0.02em" }}>{s.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* ── Right panel: parallax image ── */}

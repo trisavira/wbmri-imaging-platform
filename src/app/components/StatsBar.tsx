@@ -63,7 +63,7 @@ export function StatsBar() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
-              className="group relative py-12 px-6 text-center"
+              className="group relative py-8 px-6 text-center"
               style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
             >
               {/* Hover glow */}
@@ -73,11 +73,10 @@ export function StatsBar() {
               />
 
               <div className="text-transparent bg-clip-text"
-                style={{ fontSize: "clamp(2.4rem, 4vw, 3.4rem)", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.03em", backgroundImage: "linear-gradient(135deg, #ffffff 40%, #94a3b8 100%)" }}>
+                style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.03em", backgroundImage: "linear-gradient(135deg, #ffffff 40%, #94a3b8 100%)" }}>
                 <CountUp to={stat.value} suffix={stat.suffix} prefix={stat.prefix} decimals={stat.value % 1 !== 0 ? 1 : 0} />
               </div>
-              <div className="mt-3" style={{ fontSize: "13px", fontWeight: 600, color: "#8b96a8" }}>{stat.label}</div>
-              <div className="mt-1" style={{ fontSize: "11px", color: "#64748b", lineHeight: 1.5 }}>{stat.desc}</div>
+              <div className="mt-2" style={{ fontSize: "12px", fontWeight: 500, color: "#8b96a8" }}>{stat.label}</div>
 
               <motion.div className="mx-auto mt-5 h-px rounded-full"
                 style={{ background: "linear-gradient(to right, #b31b1b, #e7751d)" }}
