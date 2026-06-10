@@ -16,7 +16,7 @@ export function Features() {
   const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section id="platform" ref={ref} className="relative py-16 overflow-hidden" style={{ background: "#f8f9fb" }}>
+    <section id="platform" ref={ref} className="relative py-10 overflow-hidden" style={{ background: "#f8f9fb" }}>
       {/* Animated gradient top border */}
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.5) 30%, rgba(231,117,29,0.8) 50%, rgba(207,69,32,0.5) 70%, transparent)" }}
@@ -30,7 +30,7 @@ export function Features() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-10"
+          className="mb-5"
         >
           <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
@@ -78,7 +78,7 @@ export function Features() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-10"
+          className="mt-5"
         >
           <motion.a href="#contact"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm"
