@@ -54,7 +54,7 @@ export function StatsBar() {
               style={{ background: "radial-gradient(ellipse at center, rgba(207,69,32,0.05) 0%, transparent 70%)" }}
             />
             <div className="text-transparent bg-clip-text mb-5"
-              style={{ fontSize: "clamp(3.5rem, 6vw, 6rem)", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.04em", backgroundImage: "linear-gradient(135deg, #ffffff 40%, #94a3b8 100%)" }}>
+              style={{ fontSize: "clamp(2.2rem, 3.5vw, 3.5rem)", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.03em", backgroundImage: "linear-gradient(135deg, #ffffff 40%, #94a3b8 100%)" }}>
               <CountUp to={stat.value} suffix={stat.suffix} prefix={stat.prefix} decimals={stat.value % 1 !== 0 ? 1 : 0} />
             </div>
             <div style={{ fontSize: "15px", fontWeight: 600, color: "#8b96a8", marginBottom: "10px" }}>{stat.label}</div>
