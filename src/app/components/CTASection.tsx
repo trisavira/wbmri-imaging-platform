@@ -21,7 +21,7 @@ export function CTASection() {
   const contentY = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 overflow-hidden" style={{ background: "#111420" }}>
+    <section id="contact" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#111420" }}>
       {/* Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(207,69,32,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(207,69,32,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 

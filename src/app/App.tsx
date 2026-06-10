@@ -4,6 +4,9 @@ import { Hero } from "./components/Hero";
 import { StatsBar } from "./components/StatsBar";
 import { Features } from "./components/Features";
 import { BodyExplorer } from "./components/BodyExplorer";
+import { ClinicalData } from "./components/ClinicalData";
+import { Workflow } from "./components/Workflow";
+import { Technology } from "./components/Technology";
 import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
 
@@ -23,6 +26,9 @@ export default function App() {
       <StatsBar />
       <Features />
       <BodyExplorer />
+      <ClinicalData />
+      <Workflow />
+      <Technology />
       <CTASection />
       <Footer />
     </div>

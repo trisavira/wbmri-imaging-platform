@@ -19,7 +19,7 @@ export function Workflow() {
   const orbY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section id="workflow" ref={ref} className="relative py-24 overflow-hidden" style={{ background: "#0c0e15" }}>
+    <section id="workflow" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#0c0e15" }}>
       {/* Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
 

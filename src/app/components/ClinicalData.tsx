@@ -29,7 +29,7 @@ export function ClinicalData() {
   const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section id="clinical" ref={ref} className="relative py-24 overflow-hidden" style={{ background: "#f8f9fb" }}>
+    <section id="clinical" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#f8f9fb" }}>
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
 
