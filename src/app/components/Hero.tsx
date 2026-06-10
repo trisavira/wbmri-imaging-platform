@@ -15,7 +15,7 @@ export function Hero() {
   const smoothImgY = useSpring(imgY, { stiffness: 60, damping: 20 });
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex flex-col overflow-hidden" style={{ background: "#0c0e15" }}>
+    <section ref={containerRef} className="relative flex flex-col overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start" }}>
 
       {/* Single subtle ambient glow */}
       <div className="absolute pointer-events-none" style={{ top: "10%", left: "-5%", width: "45%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(179,27,27,0.07) 0%, transparent 70%)", filter: "blur(120px)" }} />

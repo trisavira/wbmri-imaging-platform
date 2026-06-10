@@ -16,7 +16,7 @@ export function Features() {
   const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
 
   return (
-    <section id="platform" ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#f8f9fb" }}>
+    <section id="platform" ref={ref} className="relative flex items-center overflow-hidden" style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}>
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.5) 30%, rgba(231,117,29,0.8) 50%, rgba(207,69,32,0.5) 70%, transparent)" }}
         animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

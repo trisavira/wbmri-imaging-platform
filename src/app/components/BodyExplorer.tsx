@@ -211,7 +211,7 @@ export function BodyExplorer() {
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
-    <section id="body-explorer" ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0c0e15" }}>
+    <section id="body-explorer" ref={ref} className="relative flex items-center overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       {/* Parallax aurora orbs */}
       <motion.div className="absolute pointer-events-none" style={{ top: "10%", left: "-15%", width: "50%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(231,117,29,0.08) 0%, transparent 70%)", filter: "blur(80px)", y: orbY1 }}

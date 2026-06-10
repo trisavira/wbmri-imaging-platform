@@ -20,7 +20,16 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden" style={{ background: "#0c0e15", fontFamily: "'Open Sans', system-ui, sans-serif" }}>
+    <div
+      style={{
+        background: "#0c0e15",
+        fontFamily: "'Open Sans', system-ui, sans-serif",
+        height: "100vh",
+        overflowY: "scroll",
+        scrollSnapType: "y mandatory",
+        scrollBehavior: "smooth",
+      }}
+    >
       <Navbar />
       <Hero />
       <StatsBar />
