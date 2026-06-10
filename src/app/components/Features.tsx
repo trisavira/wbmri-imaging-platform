@@ -32,17 +32,9 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-3">
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
             <span style={{ fontSize: "12px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>PLATFORM CAPABILITIES</span>
-          </div>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em", maxWidth: "520px" }}>
-              Everything a modern<br />imaging department needs
-            </h2>
-            <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#4b5563", maxWidth: "380px" }}>
-              A unified platform purpose-built for oncology, inflammatory disease, and preventive screening — integrated into your existing infrastructure.
-            </p>
           </div>
         </motion.div>
 
@@ -55,7 +47,7 @@ export function Features() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group relative p-7 cursor-default bg-white overflow-hidden"
+                className="group relative p-5 cursor-default bg-white overflow-hidden"
                 style={{
                   borderRight: (i % 4 !== 3) ? "1px solid rgba(0,0,0,0.08)" : "none",
                   borderBottom: "none",
@@ -67,11 +59,8 @@ export function Features() {
                   style={{ background: `radial-gradient(ellipse at top left, ${feat.color}08 0%, transparent 60%)` }}
                 />
 
-                <div className="mb-5 flex items-center justify-between">
-                  <span style={{ fontSize: "11px", color: "#9ca3af", fontWeight: 700, letterSpacing: "0.06em" }}>{feat.num}</span>
-                  <motion.div whileHover={{ scale: 1.2, rotate: 5 }} transition={{ duration: 0.2 }}>
-                    <Icon className="w-4 h-4" style={{ color: feat.color }} />
-                  </motion.div>
+                <div className="mb-4 flex items-center gap-2">
+                  <Icon className="w-4 h-4" style={{ color: feat.color }} />
                 </div>
                 <h3 className="mb-3" style={{ fontSize: "14px", fontWeight: 600, color: "#111827", lineHeight: 1.3 }}>{feat.title}</h3>
                 <p style={{ fontSize: "12px", color: "#4b5563", lineHeight: 1.75 }}>{feat.description}</p>

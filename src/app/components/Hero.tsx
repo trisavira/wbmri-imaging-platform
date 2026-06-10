@@ -81,17 +81,6 @@ export function Hero() {
           </motion.a>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex items-center gap-6 mt-10"
-        >
-          <span style={{ fontSize: "11px", color: "#4a576b", letterSpacing: "0.06em" }}>REGULATORY CLEARANCES</span>
-          {["FDA 510(k)", "CE Mark", "ISO 13485"].map((cert) => (
-            <span key={cert} style={{ fontSize: "11px", color: "#64748b", letterSpacing: "0.04em", fontWeight: 500 }}>{cert}</span>
-          ))}
-        </motion.div>
 
       </motion.div>
 
@@ -155,20 +144,6 @@ export function Hero() {
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none" style={{ background: "linear-gradient(to top, #0c0e15, transparent)" }} />
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        style={{ opacity: contentOpacity }}
-      >
-        <span style={{ fontSize: "10px", color: "#3d4960", letterSpacing: "0.12em" }}>SCROLL</span>
-        <motion.div className="w-px h-8" style={{ background: "linear-gradient(to bottom, rgba(207,69,32,0.6), transparent)" }}
-          animate={{ scaleY: [0, 1, 0], originY: 0 }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
     </section>
   );
 }

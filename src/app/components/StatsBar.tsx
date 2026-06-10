@@ -56,14 +56,14 @@ export function StatsBar() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] }}
-              className="group relative py-8 px-6 text-center"
+              className="group relative py-6 px-4 text-center"
               style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
             >
               {/* Hover glow */}
