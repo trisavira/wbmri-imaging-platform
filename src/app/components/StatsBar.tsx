@@ -38,7 +38,7 @@ export function StatsBar() {
   const bgX = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
-    <section ref={ref} className="relative overflow-hidden" style={{ background: "#0c0e15", borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0c0e15", borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
       {/* Animated gradient sweep */}
       <motion.div className="absolute inset-0 pointer-events-none" style={{ x: bgX }}
         animate={{ opacity: [0.4, 0.7, 0.4] }}
@@ -55,7 +55,7 @@ export function StatsBar() {
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div

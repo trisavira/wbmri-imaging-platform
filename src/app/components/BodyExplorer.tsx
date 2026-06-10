@@ -211,7 +211,7 @@ export function BodyExplorer() {
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
-    <section id="body-explorer" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#0c0e15" }}>
+    <section id="body-explorer" ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0c0e15" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       {/* Parallax aurora orbs */}
       <motion.div className="absolute pointer-events-none" style={{ top: "10%", left: "-15%", width: "50%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(231,117,29,0.08) 0%, transparent 70%)", filter: "blur(80px)", y: orbY1 }}
@@ -226,7 +226,7 @@ export function BodyExplorer() {
         animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <motion.div style={{ y }} className="relative max-w-7xl mx-auto px-6">
+      <motion.div style={{ y }} className="relative max-w-7xl mx-auto px-6 w-full">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style={{ border: "1px solid rgba(231,117,29,0.3)", background: "rgba(231,117,29,0.08)" }}>

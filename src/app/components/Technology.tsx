@@ -25,7 +25,7 @@ export function Technology() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
-    <section id="technology" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#f8f9fb" }}>
+    <section id="technology" ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#f8f9fb" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.5) 30%, rgba(231,117,29,0.8) 50%, rgba(207,69,32,0.5) 70%, transparent)" }}
@@ -33,7 +33,7 @@ export function Technology() {
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
-      <motion.div style={{ y: sectionY }} className="relative max-w-7xl mx-auto px-6">
+      <motion.div style={{ y: sectionY }} className="relative max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image with parallax */}
           <motion.div ref={imgRef}

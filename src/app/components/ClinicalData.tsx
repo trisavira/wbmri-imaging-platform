@@ -29,7 +29,7 @@ export function ClinicalData() {
   const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section id="clinical" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#f8f9fb" }}>
+    <section id="clinical" ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#f8f9fb" }}>
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
 
@@ -40,7 +40,7 @@ export function ClinicalData() {
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      <motion.div style={{ y }} className="relative max-w-7xl mx-auto px-6">
+      <motion.div style={{ y }} className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
             <motion.div className="h-px w-8" style={{ background: "#b31b1b" }}

@@ -18,14 +18,14 @@ export function Workflow() {
   const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section id="workflow" ref={ref} className="relative py-24 overflow-hidden" style={{ background: "#0c0e15" }}>
+    <section id="workflow" ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0c0e15" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.4) 30%, rgba(231,117,29,0.6) 50%, rgba(207,69,32,0.4) 70%, transparent)" }}
         animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 3, repeat: Infinity }}
       />
 
-      <motion.div style={{ y }} className="relative max-w-6xl mx-auto px-6">
+      <motion.div style={{ y }} className="relative max-w-6xl mx-auto px-6 w-full">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
           className="text-center mb-16"
