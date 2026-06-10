@@ -91,12 +91,11 @@ export function Technology() {
                 <div className="h-px w-8" style={{ background: "#b31b1b" }} />
                 <span style={{ fontSize: "12px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>TECHNICAL SPECIFICATIONS</span>
               </div>
-              <h2 className="mb-4" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 700, color: "#0f1117" }}>
-                Built for enterprise{" "}
-                <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>clinical scale</span>
+              <h2 className="mb-3" style={{ fontSize: "clamp(1.3rem, 2vw, 1.75rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.2 }}>
+                Built for enterprise <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>clinical scale</span>
               </h2>
-              <p className="mb-8" style={{ fontSize: "15px", lineHeight: 1.75, color: "#374151" }}>
-                Purpose-engineered hardware and software co-design — from magnet homogeneity to cloud inference pipelines — delivers consistent diagnostic quality at scale.
+              <p className="mb-6" style={{ fontSize: "13px", lineHeight: 1.65, color: "#6b7280", maxWidth: "380px" }}>
+                Hardware and software co-designed for consistent diagnostic quality at enterprise scale.
               </p>
             </motion.div>
 
