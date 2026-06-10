@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { StatsBar } from "./components/StatsBar";
-import { Features } from "./components/Features";
 import { BodyExplorer } from "./components/BodyExplorer";
 import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
@@ -20,8 +18,6 @@ export default function App() {
     <div className="min-h-screen overflow-x-hidden" style={{ background: "#0c0e15", fontFamily: "'Open Sans', system-ui, sans-serif" }}>
       <Navbar />
       <Hero />
-      <StatsBar />
-      <Features />
       <BodyExplorer />
       <CTASection />
       <Footer />
