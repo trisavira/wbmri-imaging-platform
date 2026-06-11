@@ -11,7 +11,7 @@ const certifications = ["ACR Accredited", "3T MRI", "AI-Enhanced", "Subspecialty
 
 export function Footer() {
   return (
-    <footer style={{ background: "#080a10", borderTop: "1px solid rgba(255,255,255,0.06)" }} className="py-16 relative overflow-hidden">
+    <footer style={{ background: "#080a10", borderTop: "1px solid rgba(255,255,255,0.06)", scrollSnapAlign: "start", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" }} className="py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.3), transparent)" }} />
 
