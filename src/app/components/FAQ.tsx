@@ -73,8 +73,8 @@ export function FAQ() {
             </h2>
           </motion.div>
 
-          {/* Accordion — two columns */}
-          <div className="grid lg:grid-cols-2 gap-3 max-h-[calc(100vh-280px)] overflow-y-auto pr-2" style={{ scrollbarWidth: "none" }}>
+          {/* Accordion — single column */}
+          <div className="flex flex-col gap-3 max-h-[calc(100vh-280px)] overflow-y-auto pr-1" style={{ scrollbarWidth: "none" }}>
             {faqs.map((faq, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 16 }}
