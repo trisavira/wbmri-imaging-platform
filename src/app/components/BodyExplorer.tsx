@@ -211,7 +211,7 @@ export function BodyExplorer() {
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
-    <section id="body-explorer" ref={ref} className="relative flex flex-col overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start", paddingTop: "72px", paddingBottom: "48px" }}>
+    <section id="body-explorer" ref={ref} className="relative flex flex-col overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start", paddingTop: "80px", paddingBottom: "80px" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       {/* Parallax aurora orbs */}
       <motion.div className="absolute pointer-events-none" style={{ top: "10%", left: "-15%", width: "50%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(231,117,29,0.08) 0%, transparent 70%)", filter: "blur(80px)", y: orbY1 }}
@@ -242,7 +242,7 @@ export function BodyExplorer() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-6 flex-1" style={{ minHeight: 0 }}>
+        <div className="flex flex-col lg:flex-row gap-6 flex-1">
           {/* Diagram */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
             className="shrink-0 flex flex-col items-center"
@@ -253,7 +253,7 @@ export function BodyExplorer() {
           </motion.div>
 
           {/* Info panel */}
-          <div className="flex-1 flex flex-col" style={{ minHeight: 0 }}>
+          <div className="flex-1 flex flex-col">
             <AnimatePresence mode="wait">
               {activeRegion ? (
                 <motion.div key={activeRegion.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
