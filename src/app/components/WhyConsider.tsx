@@ -1,31 +1,35 @@
 import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
-import { Heart, Users, Search, Star } from "lucide-react";
+import { Heart, Users, Search, Star, ChevronRight } from "lucide-react";
 
 const profiles = [
   {
     icon: Heart,
+    num: "01",
     label: "Family History",
-    sublabel: "Cancer or chronic disease",
-    description: "If a parent, sibling, or close relative has been diagnosed with cancer or a chronic illness, Whole-Body MRI can provide an early baseline and help monitor your health proactively.",
+    sublabel: "Cancer or chronic disease in your family",
+    description: "If a parent, sibling, or close relative has been diagnosed with cancer or a chronic illness, Whole-Body MRI can provide an early baseline and help you monitor your health proactively over time.",
     color: "#cf4520",
   },
   {
     icon: Star,
+    num: "02",
     label: "Proactive Health",
-    sublabel: "Ages 30–60, health-conscious",
-    description: "If you take an active role in your wellbeing — annual check-ups, regular exercise, preventive screenings — Whole-Body MRI adds a comprehensive layer of visibility to your preventive care routine.",
+    sublabel: "Ages 30–60, health-conscious adults",
+    description: "If you take an active role in your wellbeing, Whole-Body MRI adds a comprehensive layer of visibility to your preventive care routine — going beyond what a standard check-up captures.",
     color: "#e7751d",
   },
   {
     icon: Search,
+    num: "03",
     label: "Peace of Mind",
-    sublabel: "Seeking a baseline snapshot",
-    description: "For those who simply want to know more about what's happening inside their body, Whole-Body MRI provides a comprehensive, medically reviewed baseline — giving you clarity and confidence.",
+    sublabel: "A complete baseline snapshot",
+    description: "For those who simply want to know more about what's happening inside their body, Whole-Body MRI provides a medically reviewed, comprehensive baseline — giving you clarity and confidence.",
     color: "#b31b1b",
   },
   {
     icon: Users,
+    num: "04",
     label: "Executive Health",
     sublabel: "Complement to annual programs",
     description: "Whole-Body MRI pairs naturally with executive health programs, providing a whole-body view that complements standard bloodwork, stress tests, and targeted screenings.",
@@ -54,73 +58,96 @@ export function WhyConsider() {
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 24, filter: "blur(8px)" }} animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4"
         >
-          <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8" style={{ background: "#b31b1b" }} />
-            <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>IS THIS RIGHT FOR YOU</span>
-            <div className="h-px w-8" style={{ background: "#b31b1b" }} />
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8" style={{ background: "#b31b1b" }} />
+              <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>IS THIS RIGHT FOR YOU</span>
+            </div>
+            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+              Who benefits most from{" "}
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
+                Whole-Body MRI
+              </span>
+            </h2>
           </div>
-          <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-            Who benefits most from{" "}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
-              Whole-Body MRI
-            </span>
-          </h2>
+          <p style={{ fontSize: "13px", color: "#475569" }}>Hover each row to learn more</p>
         </motion.div>
 
-        {/* Profile cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 flex-1 mt-10">
+        {/* Profile strips */}
+        <div className="flex flex-col flex-1 justify-center gap-0 mt-8">
           {profiles.map((p, i) => {
             const Icon = p.icon;
             const isHovered = hovered === i;
             return (
               <motion.div key={i}
-                initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.55, delay: 0.15 + i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
+                initial={{ opacity: 0, x: -40 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.55, delay: 0.1 + i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
                 onHoverStart={() => setHovered(i)}
                 onHoverEnd={() => setHovered(null)}
-                className="relative rounded-2xl p-6 flex flex-col cursor-default overflow-hidden"
+                className="relative flex items-center gap-8 cursor-default group"
                 style={{
-                  background: isHovered ? `${p.color}12` : "rgba(255,255,255,0.03)",
-                  border: `1px solid ${isHovered ? p.color + "40" : "rgba(255,255,255,0.07)"}`,
-                  transition: "background 0.3s, border-color 0.3s",
+                  padding: "18px 24px",
+                  borderBottom: i < profiles.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                  borderTop: i === 0 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                  background: isHovered ? "rgba(255,255,255,0.025)" : "transparent",
+                  transition: "background 0.25s",
+                  borderRadius: "4px",
                 }}
               >
-                <motion.div animate={{ boxShadow: isHovered ? `0 0 40px ${p.color}20` : "none" }}
-                  className="absolute inset-0 rounded-2xl pointer-events-none" transition={{ duration: 0.3 }} />
-
-                <motion.div
-                  animate={{ scale: isHovered ? 1.1 : 1, color: isHovered ? p.color : "#64748b" }}
+                {/* Accent line */}
+                <motion.div className="absolute left-0 top-0 bottom-0 w-0.5 rounded-full"
+                  animate={{ opacity: isHovered ? 1 : 0, scaleY: isHovered ? 1 : 0 }}
+                  style={{ background: p.color, transformOrigin: "top" }}
                   transition={{ duration: 0.25 }}
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: isHovered ? `${p.color}18` : "rgba(255,255,255,0.05)" }}
+                />
+
+                {/* Number */}
+                <span className="shrink-0 w-8" style={{ fontSize: "12px", color: "#2a3240", fontFamily: "monospace", fontWeight: 700 }}>{p.num}</span>
+
+                {/* Icon */}
+                <motion.div
+                  animate={{ color: isHovered ? p.color : "#334155", scale: isHovered ? 1.15 : 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                  style={{ background: isHovered ? `${p.color}15` : "rgba(255,255,255,0.04)", border: `1px solid ${isHovered ? p.color + "30" : "rgba(255,255,255,0.06)"}`, transition: "background 0.25s, border-color 0.25s" }}
                 >
-                  <Icon className="w-5 h-5" style={{ color: isHovered ? p.color : "#64748b" }} />
+                  <Icon className="w-5 h-5" style={{ color: isHovered ? p.color : "#475569" }} />
                 </motion.div>
 
-                <div style={{ fontSize: "16px", fontWeight: 700, color: "#f1f5f9", marginBottom: "4px" }}>{p.label}</div>
-                <div style={{ fontSize: "12px", color: p.color, marginBottom: "12px", fontWeight: 500 }}>{p.sublabel}</div>
+                {/* Label block */}
+                <div className="flex-1 min-w-0">
+                  <div style={{ fontSize: "17px", fontWeight: 700, color: isHovered ? "#f1f5f9" : "#94a3b8", transition: "color 0.25s" }}>{p.label}</div>
+                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#2a3240", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
+                </div>
 
+                {/* Description — revealed on hover */}
                 <motion.p
-                  animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10, height: isHovered ? "auto" : 0 }}
+                  animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : 16 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ fontSize: "13px", color: "#94a3b8", lineHeight: 1.7, overflow: "hidden" }}
+                  className="hidden lg:block"
+                  style={{ fontSize: "13px", color: "#64748b", lineHeight: 1.65, maxWidth: "380px", pointerEvents: "none" }}
                 >
                   {p.description}
                 </motion.p>
+
+                <motion.div animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : -8 }} transition={{ duration: 0.2 }} className="shrink-0">
+                  <ChevronRight className="w-4 h-4" style={{ color: p.color }} />
+                </motion.div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* Bottom note */}
+        {/* Footer note */}
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.8 }}
-          className="flex items-center gap-4 mt-8"
+          className="flex items-center gap-4"
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.05)" }} />
-          <span style={{ fontSize: "12px", color: "#3d4960", letterSpacing: "0.06em", textAlign: "center" }}>
-            WHOLE-BODY MRI COMPLEMENTS — BUT DOES NOT REPLACE — YOUR STANDARD PREVENTIVE SCREENINGS
+          <span style={{ fontSize: "11px", color: "#2d3748", letterSpacing: "0.08em" }}>
+            COMPLEMENTS — DOES NOT REPLACE — YOUR STANDARD PREVENTIVE SCREENINGS
           </span>
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.05)" }} />
         </motion.div>
