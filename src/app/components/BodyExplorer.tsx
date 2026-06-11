@@ -211,7 +211,7 @@ export function BodyExplorer() {
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
-    <section id="body-explorer" ref={ref} className="relative flex items-center overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start" }}>
+    <section id="body-explorer" ref={ref} className="relative flex flex-col overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start", paddingTop: "72px", paddingBottom: "32px" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       {/* Parallax aurora orbs */}
       <motion.div className="absolute pointer-events-none" style={{ top: "10%", left: "-15%", width: "50%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(231,117,29,0.08) 0%, transparent 70%)", filter: "blur(80px)", y: orbY1 }}
@@ -226,26 +226,23 @@ export function BodyExplorer() {
         animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <motion.div style={{ y }} className="relative max-w-7xl mx-auto px-6 w-full">
+      <motion.div style={{ y }} className="relative flex flex-col h-full max-w-7xl mx-auto px-10 w-full">
         {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style={{ border: "1px solid rgba(231,117,29,0.3)", background: "rgba(231,117,29,0.08)" }}>
             <motion.span className="w-1.5 h-1.5 rounded-full" style={{ background: "#e7751d" }}
               animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 1.5, repeat: Infinity }} />
             <span style={{ color: "#e7751d", fontSize: "12px", letterSpacing: "0.06em" }}>INTERACTIVE BODY EXPLORER</span>
           </div>
-          <h2 className="mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, color: "#f1f5f9" }}>
-            Explore What WB-MRI{" "}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
-              Can Detect
-            </span>
+          <h2 className="mb-2" style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 700, color: "#f1f5f9" }}>
+            Explore What WB-MRI <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>Can Detect</span>
           </h2>
-          <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#94a3b8", maxWidth: "560px", margin: "0 auto" }}>
-            Click any body region to discover what conditions can be identified — with example findings and clinical context.
+          <p style={{ fontSize: "13px", color: "#64748b" }}>
+            Click any body region to see what conditions WB-MRI can identify.
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 items-stretch flex-1">
           {/* Diagram */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
             className="lg:w-64 flex flex-col items-center mx-auto lg:mx-0 shrink-0"
@@ -255,30 +252,16 @@ export function BodyExplorer() {
               <span style={{ fontSize: "12px", color: "#94a3b8", fontFamily: "monospace" }}>Click a region to explore</span>
             </div>
 
-            <div className="relative p-4 rounded-2xl" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)" }}>
-              <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
+            <div className="relative rounded-2xl" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)", padding: "16px 20px", overflow: "hidden", height: "320px" }}>
+              <div style={{ transform: "scale(0.65)", transformOrigin: "top center" }}>
+                <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
+              </div>
             </div>
 
-            {/* Legend buttons */}
-            <div className="mt-5 flex flex-wrap gap-2 justify-center max-w-[220px]">
-              {regions.map((r) => (
-                <motion.button key={r.id} onClick={() => handleClick(r.id)} whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1 rounded-full transition-all"
-                  style={{
-                    fontSize: "11px", fontWeight: 600, cursor: "pointer",
-                    background: activeId === r.id ? r.color : "rgba(255,255,255,0.04)",
-                    color: activeId === r.id ? "#fff" : "#8b96a8",
-                    border: `1px solid ${activeId === r.id ? r.color : "rgba(255,255,255,0.08)"}`,
-                  }}
-                >
-                  {r.label}
-                </motion.button>
-              ))}
-            </div>
           </motion.div>
 
           {/* Info panel */}
-          <div className="flex-1 min-h-[400px]">
+          <div className="flex-1 flex flex-col">
             <AnimatePresence mode="wait">
               {activeRegion ? (
                 <motion.div key={activeRegion.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
@@ -353,7 +336,7 @@ export function BodyExplorer() {
               ) : (
                 <motion.div key="placeholder" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center text-center rounded-2xl"
-                  style={{ background: "rgba(10,22,40,0.7)", border: "1px solid rgba(255,255,255,0.05)", minHeight: "420px", padding: "48px 32px", boxShadow: "0 8px 32px rgba(0,0,0,0.3)" }}
+                  style={{ background: "rgba(10,22,40,0.7)", border: "1px solid rgba(255,255,255,0.05)", padding: "40px 32px", boxShadow: "0 8px 32px rgba(0,0,0,0.3)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
                 >
                   <motion.div animate={{ opacity: [0.4, 0.8, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="mb-6">
                     <svg viewBox="0 0 60 100" width="60" height="100">
