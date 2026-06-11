@@ -44,7 +44,8 @@ const faqs = [
 export function FAQ() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [open, setOpen] = useState<number | null>(null);
+  const [openLeft, setOpenLeft] = useState<number | null>(null);
+  const [openRight, setOpenRight] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
 
@@ -73,45 +74,68 @@ export function FAQ() {
             </h2>
           </motion.div>
 
-          {/* Accordion — single column */}
-          <div className="flex flex-col gap-3 max-h-[calc(100vh-280px)] overflow-y-auto pr-1" style={{ scrollbarWidth: "none" }}>
-            {faqs.map((faq, i) => (
-              <motion.div key={i}
-                initial={{ opacity: 0, y: 16 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.05 + i * 0.04 }}
-                className="rounded-xl overflow-hidden"
-                style={{ background: "#ffffff", border: `1px solid ${open === i ? "rgba(179,27,27,0.2)" : "rgba(0,0,0,0.07)"}`, transition: "border-color 0.2s" }}
-              >
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 text-left"
-                  style={{ padding: "16px 20px", background: "none", border: "none", cursor: "pointer" }}
-                >
-                  <span style={{ fontSize: "14px", fontWeight: 600, color: "#111827", lineHeight: 1.4 }}>{faq.q}</span>
-                  <motion.div animate={{ rotate: open === i ? 45 : 0 }} transition={{ duration: 0.25 }} className="shrink-0">
-                    <Plus className="w-4 h-4" style={{ color: open === i ? "#b31b1b" : "#9ca3af" }} />
-                  </motion.div>
-                </button>
-                <AnimatePresence initial={false}>
-                  {open === i && (
-                    <motion.div
-                      key="answer"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      style={{ overflow: "hidden" }}
+          {/* Accordion — two independent columns */}
+          {(() => {
+            const mid = Math.ceil(faqs.length / 2);
+            const left = faqs.slice(0, mid);
+            const right = faqs.slice(mid);
+
+            const renderColumn = (
+              items: typeof faqs,
+              openIdx: number | null,
+              setOpenIdx: (v: number | null) => void,
+              offset: number
+            ) => (
+              <div className="flex flex-col gap-3 flex-1 max-h-[calc(100vh-280px)] overflow-y-auto pr-1" style={{ scrollbarWidth: "none" }}>
+                {items.map((faq, i) => {
+                  const idx = offset + i;
+                  const isOpen = openIdx === i;
+                  return (
+                    <motion.div key={idx}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={inView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.4, delay: 0.05 + idx * 0.04 }}
+                      className="rounded-xl overflow-hidden"
+                      style={{ background: "#ffffff", border: `1px solid ${isOpen ? "rgba(179,27,27,0.2)" : "rgba(0,0,0,0.07)"}`, transition: "border-color 0.2s" }}
                     >
-                      <div style={{ padding: "0 20px 18px", fontSize: "13px", color: "#4b5563", lineHeight: 1.75 }}>
-                        {faq.a}
-                      </div>
+                      <button
+                        onClick={() => setOpenIdx(isOpen ? null : i)}
+                        className="w-full flex items-center justify-between gap-4 text-left"
+                        style={{ padding: "16px 20px", background: "none", border: "none", cursor: "pointer" }}
+                      >
+                        <span style={{ fontSize: "14px", fontWeight: 600, color: "#111827", lineHeight: 1.4 }}>{faq.q}</span>
+                        <motion.div animate={{ rotate: isOpen ? 45 : 0 }} transition={{ duration: 0.25 }} className="shrink-0">
+                          <Plus className="w-4 h-4" style={{ color: isOpen ? "#b31b1b" : "#9ca3af" }} />
+                        </motion.div>
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div key="answer"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                            style={{ overflow: "hidden" }}
+                          >
+                            <div style={{ padding: "0 20px 18px", fontSize: "13px", color: "#4b5563", lineHeight: 1.75 }}>
+                              {faq.a}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
-          </div>
+                  );
+                })}
+              </div>
+            );
+
+            return (
+              <div className="flex gap-4">
+                {renderColumn(left, openLeft, setOpenLeft, 0)}
+                {renderColumn(right, openRight, setOpenRight, mid)}
+              </div>
+            );
+          })()}
         </div>
       </motion.div>
     </section>
