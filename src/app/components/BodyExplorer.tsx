@@ -242,30 +242,24 @@ export function BodyExplorer() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch flex-1">
+        <div className="flex flex-col lg:flex-row gap-6 flex-1" style={{ minHeight: 0 }}>
           {/* Diagram */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:w-64 flex flex-col items-center mx-auto lg:mx-0 shrink-0"
+            className="lg:w-56 flex flex-col shrink-0"
           >
-            <div className="mb-5 flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background: "rgba(207,69,32,0.08)", border: "1px solid rgba(207,69,32,0.25)" }}>
-              <Info className="w-3.5 h-3.5" style={{ color: "#e7751d" }} />
-              <span style={{ fontSize: "12px", color: "#94a3b8", fontFamily: "monospace" }}>Click a region to explore</span>
-            </div>
-
-            <div className="relative rounded-2xl" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)", padding: "16px 20px", overflow: "hidden", height: "320px" }}>
-              <div style={{ transform: "scale(0.65)", transformOrigin: "top center" }}>
+            <div className="flex-1 relative rounded-2xl flex items-center justify-center" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)", overflow: "hidden", padding: "12px" }}>
+              <div style={{ transform: "scale(0.6)", transformOrigin: "center center", width: "160px", height: "460px" }}>
                 <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
               </div>
             </div>
-
           </motion.div>
 
           {/* Info panel */}
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col" style={{ minHeight: 0 }}>
             <AnimatePresence mode="wait">
               {activeRegion ? (
                 <motion.div key={activeRegion.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
-                  className="relative rounded-2xl p-7"
+                  className="relative rounded-2xl p-7 h-full"
                   style={{ background: "rgba(10,22,40,0.9)", border: `1px solid ${activeRegion.color}30`, borderTop: `2px solid ${activeRegion.color}`, boxShadow: `0 0 40px ${activeRegion.color}10, 0 16px 48px rgba(0,0,0,0.5)` }}
                 >
                   <button onClick={() => setActiveId(null)} style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#64748b" }}
@@ -336,7 +330,7 @@ export function BodyExplorer() {
               ) : (
                 <motion.div key="placeholder" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center text-center rounded-2xl"
-                  style={{ background: "rgba(10,22,40,0.7)", border: "1px solid rgba(255,255,255,0.05)", padding: "40px 32px", boxShadow: "0 8px 32px rgba(0,0,0,0.3)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
+                  style={{ background: "rgba(10,22,40,0.7)", border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 8px 32px rgba(0,0,0,0.3)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px" }}
                 >
                   <motion.div animate={{ opacity: [0.4, 0.8, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="mb-6">
                     <svg viewBox="0 0 60 100" width="60" height="100">
