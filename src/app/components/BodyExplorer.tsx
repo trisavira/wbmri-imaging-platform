@@ -69,7 +69,7 @@ function BodySVG({ activeId, hoveredId, onRegionClick, onRegionHover }: BodySVGP
   const o = (id: string) => getOp(id, activeId, hoveredId);
 
   return (
-    <svg viewBox="0 0 160 460" width="160" height="460" style={{ overflow: "visible", display: "block" }}>
+    <svg viewBox="0 0 160 460" width="148" height="426" style={{ overflow: "visible", display: "block" }}>
       {/* Body silhouette (anatomical reference lines) */}
       <g fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1">
         <ellipse cx="80" cy="30" rx="22" ry="26" />
@@ -211,7 +211,7 @@ export function BodyExplorer() {
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
-    <section id="body-explorer" ref={ref} className="relative flex flex-col overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start", paddingTop: "72px", paddingBottom: "32px" }}>
+    <section id="body-explorer" ref={ref} className="relative flex flex-col overflow-hidden" style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start", paddingTop: "72px", paddingBottom: "48px" }}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       {/* Parallax aurora orbs */}
       <motion.div className="absolute pointer-events-none" style={{ top: "10%", left: "-15%", width: "50%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(231,117,29,0.08) 0%, transparent 70%)", filter: "blur(80px)", y: orbY1 }}
@@ -245,12 +245,10 @@ export function BodyExplorer() {
         <div className="flex flex-col lg:flex-row gap-6 flex-1" style={{ minHeight: 0 }}>
           {/* Diagram */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:w-56 flex flex-col shrink-0"
+            className="shrink-0 flex flex-col items-center"
           >
-            <div className="flex-1 relative rounded-2xl flex items-center justify-center" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)", overflow: "hidden", padding: "12px" }}>
-              <div style={{ transform: "scale(0.6)", transformOrigin: "center center", width: "160px", height: "460px" }}>
-                <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
-              </div>
+            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)", padding: "12px 16px" }}>
+              <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
             </div>
           </motion.div>
 
