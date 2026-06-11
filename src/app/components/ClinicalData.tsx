@@ -45,15 +45,15 @@ export function ClinicalData() {
           <div className="flex items-center justify-center gap-3 mb-5">
             <motion.div className="h-px w-8" style={{ background: "#b31b1b" }}
               animate={{ width: [32, 48, 32] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
-            <span style={{ fontSize: "12px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>CLINICAL EVIDENCE</span>
+            <span style={{ fontSize: "12px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>CLINICAL ACCURACY</span>
             <motion.div className="h-px w-8" style={{ background: "#b31b1b" }}
               animate={{ width: [32, 48, 32] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
           </div>
           <h2 className="mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, color: "#0f1117" }}>
-            Validated across{" "}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>10,000+ cases</span>
+            Can WB-MRI find it?{" "}
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>See the evidence.</span>
           </h2>
-          <p style={{ fontSize: "16px", color: "#4b5563" }}>Published in peer-reviewed journals. Proven performance in multicenter trials.</p>
+          <p style={{ fontSize: "16px", color: "#4b5563" }}>Our scanning protocols are validated across 10,000+ cases and published in peer-reviewed journals — so you can trust what we find.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-5">
@@ -64,8 +64,8 @@ export function ClinicalData() {
             className="rounded-2xl p-6"
             style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
           >
-            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111827", marginBottom: "4px" }}>Performance Profile</h3>
-            <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "16px" }}>Multi-dimensional accuracy metrics</p>
+            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111827", marginBottom: "4px" }}>Diagnostic Accuracy</h3>
+            <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "16px" }}>Validated across 6 clinical dimensions</p>
             <ResponsiveContainer width="100%" height={220}>
               <RadarChart data={radarData}>
                 <PolarGrid stroke="rgba(0,0,0,0.08)" />

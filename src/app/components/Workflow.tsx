@@ -1,14 +1,13 @@
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
-import { UserCheck, ScanLine, Cpu, FileText, Send, CheckCircle2 } from "lucide-react";
+import { Calendar, ClipboardList, Scan, FileCheck, PhoneCall } from "lucide-react";
 
 const steps = [
-  { icon: UserCheck,    title: "Patient Intake",       time: "5 min",     color: "#e7751d" },
-  { icon: ScanLine,     title: "Acquisition",          time: "35–45 min", color: "#cf4520" },
-  { icon: Cpu,          title: "AI Processing",        time: "~8 min",    color: "#b31b1b" },
-  { icon: FileText,     title: "Structured Report",    time: "10 min",    color: "#cf4520" },
-  { icon: Send,         title: "Distribution",         time: "< 1 min",   color: "#e7751d" },
-  { icon: CheckCircle2, title: "Follow-up Scheduling", time: "Automated", color: "#b31b1b" },
+  { icon: Calendar,     title: "Schedule",        detail: "Book online or call 212-746-6000. No physician referral required — self-schedule at your convenience.",  color: "#e7751d" },
+  { icon: ClipboardList,title: "Before Your Scan", detail: "Optional virtual provider visit. No fasting, no medication, no contrast injection, no special prep needed.", color: "#cf4520" },
+  { icon: Scan,         title: "Your 45-Min Scan", detail: "Lie comfortably in our 3T scanner. We image head to mid-thigh — thousands of images in a single session.",   color: "#b31b1b" },
+  { icon: FileCheck,    title: "Your Report",      detail: "Results in your patient portal within 2 business days, reviewed by subspecialty radiologists.",              color: "#cf4520" },
+  { icon: PhoneCall,    title: "Follow-up Care",   detail: "If anything needs attention, our care team coordinates next steps with WCM subspecialists seamlessly.",     color: "#e7751d" },
 ];
 
 export function Workflow() {
@@ -23,7 +22,7 @@ export function Workflow() {
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-        style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.4) 30%, rgba(231,117,29,0.6) 50%, rgba(207,69,32,0.4) 70%, transparent)" }}
+        style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.4) 30%, rgba(207,69,32,0.6) 50%, rgba(179,27,27,0.4) 70%, transparent)" }}
         animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 3, repeat: Infinity }}
       />
 
@@ -32,27 +31,29 @@ export function Workflow() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
-            <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>CLINICAL WORKFLOW</span>
+            <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>WHAT TO EXPECT</span>
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
           </div>
           <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
-            Referral to report in{" "}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>under 60 minutes</span>
+            Simple, guided,{" "}
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
+              every step of the way
+            </span>
           </h2>
         </motion.div>
 
-        {/* Steps — fills middle space */}
+        {/* Steps */}
         <div className="relative flex-1 flex items-center" style={{ margin: "40px 0" }}>
           {/* Connector */}
-          <div className="hidden lg:block absolute left-[calc(8.33%+36px)] right-[calc(8.33%+36px)] h-px"
+          <div className="hidden lg:block absolute left-[calc(10%+36px)] right-[calc(10%+36px)] h-px"
             style={{ top: "36px", background: "rgba(255,255,255,0.06)" }} />
-          <motion.div className="hidden lg:block absolute left-[calc(8.33%+36px)] h-px"
-            style={{ top: "36px", background: "linear-gradient(to right, #e7751d, #b31b1b)", right: "calc(8.33% + 36px)" }}
+          <motion.div className="hidden lg:block absolute left-[calc(10%+36px)] h-px"
+            style={{ top: "36px", background: "linear-gradient(to right, #e7751d, #b31b1b)", right: "calc(10% + 36px)" }}
             initial={{ scaleX: 0, originX: "left" }}
             animate={inView ? { scaleX: 1 } : {}}
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           />
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-6 w-full">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 w-full">
             {steps.map((step, i) => {
               const Icon = step.icon;
               return (
@@ -68,20 +69,20 @@ export function Workflow() {
                   >
                     <Icon className="w-6 h-6" style={{ color: step.color }} />
                   </motion.div>
-                  <p style={{ fontSize: "14px", fontWeight: 600, color: "#e2e8f0", marginBottom: "8px" }}>{step.title}</p>
-                  <span style={{ fontSize: "13px", color: step.color, fontFamily: "monospace", fontWeight: 500 }}>{step.time}</span>
+                  <p style={{ fontSize: "14px", fontWeight: 700, color: "#e2e8f0", marginBottom: "8px" }}>{step.title}</p>
+                  <p style={{ fontSize: "12px", color: "#64748b", lineHeight: 1.65 }}>{step.detail}</p>
                 </motion.div>
               );
             })}
           </div>
         </div>
 
-        {/* Footer rule */}
+        {/* Footer */}
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.9 }}
           className="flex items-center gap-4"
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.06)" }} />
-          <span style={{ fontSize: "11px", color: "#3d4960", letterSpacing: "0.1em" }}>TOTAL TURNAROUND · UNDER 60 MINUTES</span>
+          <span style={{ fontSize: "11px", color: "#3d4960", letterSpacing: "0.1em" }}>NO FASTING · NO CONTRAST · NO SPECIAL PREPARATION REQUIRED</span>
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.06)" }} />
         </motion.div>
       </motion.div>

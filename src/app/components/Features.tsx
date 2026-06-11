@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
-import { Brain, ScanLine, BarChart3, Network } from "lucide-react";
+import { Star, Users, FileText, Heart } from "lucide-react";
 
 const features = [
-  { icon: ScanLine,   title: "Whole-Body Coverage",     description: "Vertex to toes in a single exam with consistent diagnostic quality across all anatomical regions.", color: "#e7751d" },
-  { icon: Brain,      title: "AI-Assisted Detection",   description: "Deep learning trained on 500K+ cases automatically flags lesions, measures volumes, and tracks change.", color: "#cf4520" },
-  { icon: BarChart3,  title: "Quantitative Biomarkers", description: "Standardized ADC maps, fat fraction, and T1/T2 relaxometry for objective, reproducible monitoring.", color: "#b31b1b" },
-  { icon: Network,    title: "PACS Integration",        description: "Native DICOM, HL7 FHIR, and REST API connectivity with zero disruption to your existing workflow.", color: "#cf4520" },
+  { icon: Star,      title: "Unmatched Imaging Expertise",    description: "Advanced 3T MRI scanners with AI-powered sequences refined to the highest clinical standards by our expert team.", color: "#e7751d" },
+  { icon: Users,     title: "Dedicated Provider Support",     description: "A personalized provider guides you through the entire process — from scheduling to results — at every step.", color: "#cf4520" },
+  { icon: FileText,  title: "Patient-Friendly Reports",       description: "Receive annotated images and clear findings by body region — written in plain language you can understand and share.", color: "#b31b1b" },
+  { icon: Heart,     title: "Seamless Follow-up Care",        description: "If anything needs attention, our team coordinates direct access to Weill Cornell subspecialists for next steps.", color: "#cf4520" },
 ];
 
 export function Features() {
@@ -20,31 +20,29 @@ export function Features() {
       style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
     >
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-        style={{ background: "linear-gradient(to right, transparent, rgba(207,69,32,0.5) 30%, rgba(231,117,29,0.8) 50%, rgba(207,69,32,0.5) 70%, transparent)" }}
+        style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.5) 30%, rgba(207,69,32,0.8) 50%, rgba(179,27,27,0.5) 70%, transparent)" }}
         animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 4, repeat: Infinity }}
       />
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.08) 70%, transparent)" }} />
 
       <motion.div style={{ y }} className="relative h-full flex flex-col max-w-7xl mx-auto px-10 w-full py-20">
-        {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
-              <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>PLATFORM CAPABILITIES</span>
+              <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>WHY CHOOSE WEILL CORNELL</span>
             </div>
             <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
-              Everything a modern<br />imaging department needs
+              World-class care,<br />from scan to follow-up
             </h2>
           </div>
           <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#6b7280", maxWidth: "340px" }}>
-            Purpose-built for oncology, inflammatory disease, and preventive screening — integrated into your existing infrastructure.
+            Weill Cornell Medicine brings together advanced imaging technology and subspecialty expertise so you get the most accurate, actionable picture of your health.
           </p>
         </motion.div>
 
-        {/* Cards — flex-1 so they fill remaining space */}
         <div className="grid grid-cols-2 lg:grid-cols-4 flex-1 gap-0"
           style={{ border: "1px solid rgba(0,0,0,0.08)", borderRadius: "8px", overflow: "hidden" }}
         >
