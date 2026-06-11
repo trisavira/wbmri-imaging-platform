@@ -69,15 +69,8 @@ export function Testimonials() {
               transition={{ duration: 0.6, delay: 0.15 + i * 0.15, type: "spring", stiffness: 90, damping: 18 }}
               whileHover={{ y: -6, boxShadow: `0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px ${t.typeColor}20` }}
               className="relative rounded-2xl flex flex-col"
-              style={{ background: "rgba(10,22,40,0.9)", border: `1px solid rgba(255,255,255,0.07)`, borderTop: `2px solid ${t.typeColor}`, padding: "28px", boxShadow: "0 4px 24px rgba(0,0,0,0.3)" }}
+              style={{ background: "rgba(10,22,40,0.9)", border: `1px solid ${t.typeColor}18`, borderTop: `2px solid ${t.typeColor}`, padding: "28px", boxShadow: "0 4px 24px rgba(0,0,0,0.3)" }}
             >
-              {/* Type badge */}
-              <div className="inline-flex items-center gap-1.5 mb-5 self-start px-3 py-1 rounded-full"
-                style={{ background: `${t.typeColor}15`, border: `1px solid ${t.typeColor}30` }}>
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: t.typeColor }} />
-                <span style={{ fontSize: "10px", color: t.typeColor, fontWeight: 600, letterSpacing: "0.08em" }}>{t.type.toUpperCase()}</span>
-              </div>
-
               <Quote className="w-8 h-8 mb-4 flex-shrink-0" style={{ color: t.typeColor, opacity: 0.4 }} />
 
               <p className="flex-1" style={{ fontSize: "14px", lineHeight: 1.8, color: "#94a3b8", fontStyle: "italic" }}>

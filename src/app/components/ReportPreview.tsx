@@ -28,9 +28,9 @@ export function ReportPreview() {
 
   return (
     <section id="report-preview" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#0c0e15", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.4) 30%, rgba(207,69,32,0.7) 50%, rgba(179,27,27,0.4) 70%, transparent)" }}
         animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 3, repeat: Infinity }}
@@ -47,13 +47,13 @@ export function ReportPreview() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>YOUR REPORT EXPERIENCE</span>
             </div>
-            <h2 className="mb-5" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
+            <h2 className="mb-5" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
               Clear findings,<br />
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
                 plain language
               </span>
             </h2>
-            <p className="mb-6" style={{ fontSize: "15px", lineHeight: 1.85, color: "#8b96a8" }}>
+            <p className="mb-6" style={{ fontSize: "15px", lineHeight: 1.85, color: "#374151" }}>
               Your report is organized by body region — written in plain language, with annotated images. Subspecialty radiologists review every finding so you get clinical context, not just data.
             </p>
             <ul className="space-y-3">
@@ -66,7 +66,7 @@ export function ReportPreview() {
                 <motion.li key={i} initial={{ opacity: 0, x: -16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.08 }}
                   className="flex items-center gap-3"
-                  style={{ fontSize: "14px", color: "#64748b" }}
+                  style={{ fontSize: "14px", color: "#4b5563" }}
                 >
                   <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#b31b1b" }} />
                   {item}
@@ -79,17 +79,17 @@ export function ReportPreview() {
           <motion.div initial={{ opacity: 0, x: 40, scale: 0.96 }} animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 80, damping: 18 }}
             className="rounded-2xl overflow-hidden"
-            style={{ background: "rgba(8,16,34,0.95)", border: "1px solid rgba(255,255,255,0.07)", boxShadow: "0 0 60px rgba(179,27,27,0.06), 0 24px 60px rgba(0,0,0,0.5)" }}
+            style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.1)", boxShadow: "0 4px 32px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06)" }}
           >
             {/* Report header */}
-            <div className="px-5 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(179,27,27,0.06)" }}>
-              <div style={{ fontSize: "11px", color: "#4a576b", letterSpacing: "0.08em", marginBottom: "2px" }}>WEILL CORNELL MEDICINE · WHOLE BODY MRI</div>
-              <div style={{ fontSize: "15px", fontWeight: 600, color: "#e2e8f0" }}>Sample Report — Illustrative Only</div>
-              <div style={{ fontSize: "12px", color: "#475569", marginTop: "2px" }}>Click any region to expand</div>
+            <div className="px-5 py-4" style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "rgba(179,27,27,0.04)" }}>
+              <div style={{ fontSize: "11px", color: "#9ca3af", letterSpacing: "0.08em", marginBottom: "2px" }}>WEILL CORNELL MEDICINE · WHOLE BODY MRI</div>
+              <div style={{ fontSize: "15px", fontWeight: 600, color: "#111827" }}>Sample Report — Illustrative Only</div>
+              <div style={{ fontSize: "12px", color: "#9ca3af", marginTop: "2px" }}>Click any region to expand</div>
             </div>
 
             {/* Region rows */}
-            <div className="divide-y" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
+            <div className="divide-y" style={{ borderColor: "rgba(0,0,0,0.05)" }}>
               {regions.map((r, i) => {
                 const sc = statusConfig[r.status];
                 const Icon = sc.icon;
@@ -99,18 +99,18 @@ export function ReportPreview() {
                     <motion.button
                       onClick={() => setActive(isOpen ? null : i)}
                       className="w-full flex items-center gap-3 px-5 py-3 text-left"
-                      style={{ background: isOpen ? "rgba(255,255,255,0.03)" : "transparent", border: "none", cursor: "pointer", transition: "background 0.2s" }}
+                      style={{ background: isOpen ? "rgba(179,27,27,0.04)" : "transparent", border: "none", cursor: "pointer", transition: "background 0.2s" }}
                       initial={{ opacity: 0, x: 20 }}
                       animate={inView ? { opacity: 1, x: 0 } : {}}
                       transition={{ delay: 0.3 + i * 0.06 }}
                     >
                       <Icon className="w-4 h-4 shrink-0" style={{ color: sc.color }} />
-                      <span style={{ fontSize: "13px", fontWeight: 600, color: "#d1d8e4", flex: 1 }}>{r.label}</span>
+                      <span style={{ fontSize: "13px", fontWeight: 600, color: "#111827", flex: 1 }}>{r.label}</span>
                       <span className="px-2 py-0.5 rounded-full" style={{ fontSize: "10px", color: sc.color, background: sc.bg, border: `1px solid ${sc.border}`, fontWeight: 600 }}>
                         {sc.label}
                       </span>
                       <motion.div animate={{ rotate: isOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
-                        <ChevronRight className="w-3.5 h-3.5" style={{ color: "#475569" }} />
+                        <ChevronRight className="w-3.5 h-3.5" style={{ color: "#9ca3af" }} />
                       </motion.div>
                     </motion.button>
                     <AnimatePresence initial={false}>
@@ -124,7 +124,7 @@ export function ReportPreview() {
                         >
                           <div className="px-5 pb-4 pl-12">
                             <div style={{ fontSize: "12px", fontWeight: 600, color: sc.color, marginBottom: "4px" }}>{r.finding}</div>
-                            <div style={{ fontSize: "12px", color: "#64748b", lineHeight: 1.7 }}>{r.detail}</div>
+                            <div style={{ fontSize: "12px", color: "#6b7280", lineHeight: 1.7 }}>{r.detail}</div>
                           </div>
                         </motion.div>
                       )}

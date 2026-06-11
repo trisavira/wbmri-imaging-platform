@@ -4,9 +4,9 @@ import { Calendar, ClipboardList, Scan, FileCheck, PhoneCall } from "lucide-reac
 
 const steps = [
   { icon: Calendar,     title: "Schedule",        detail: "Book online or call 212-746-6000. No physician referral required — self-schedule at your convenience.",  color: "#e7751d" },
-  { icon: ClipboardList,title: "Before Your Scan", detail: "Optional virtual provider visit. No fasting, no medication, no contrast injection, no special prep needed.", color: "#cf4520" },
+  { icon: ClipboardList,title: "Prepare for Your Scan", detail: "Optional virtual provider visit. No fasting, no medication, no contrast injection, no special prep needed.", color: "#cf4520" },
   { icon: Scan,         title: "Your 45-Min Scan", detail: "Lie comfortably in our 3T scanner. We image head to mid-thigh — thousands of images in a single session.",   color: "#b31b1b" },
-  { icon: FileCheck,    title: "Your Report",      detail: "Results in your patient portal within 2 business days, reviewed by subspecialty radiologists.",              color: "#cf4520" },
+  { icon: FileCheck,    title: "Receive Your Report",      detail: "Results in your patient portal within 2 business days, reviewed by subspecialty radiologists.",              color: "#cf4520" },
   { icon: PhoneCall,    title: "Follow-up Care",   detail: "If anything needs attention, our care team coordinates next steps with WCM subspecialists seamlessly.",     color: "#e7751d" },
 ];
 
@@ -44,7 +44,7 @@ export function Workflow() {
         </motion.div>
 
         {/* Steps */}
-        <div className="relative flex-1 flex items-center" style={{ margin: "40px 0" }}>
+        <div className="relative flex items-center" style={{ margin: "20px 0 16px" }}>
           {/* Connector */}
           <div className="hidden lg:block absolute left-[calc(10%+36px)] right-[calc(10%+36px)] h-px"
             style={{ top: "36px", background: "rgba(255,255,255,0.06)" }} />
@@ -93,7 +93,7 @@ export function Workflow() {
 
         {/* Footer */}
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.9 }}
-          className="flex items-center gap-4"
+          className="flex items-center gap-4" style={{ marginTop: "8px" }}
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.06)" }} />
           <span style={{ fontSize: "11px", color: "#3d4960", letterSpacing: "0.1em" }}>NO FASTING · NO CONTRAST · NO SPECIAL PREPARATION REQUIRED</span>
