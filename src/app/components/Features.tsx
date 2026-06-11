@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { Star, Users, FileText, Heart } from "lucide-react";
 
@@ -14,6 +14,7 @@ export function Features() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <section id="platform" ref={ref} className="relative overflow-hidden"
@@ -26,6 +27,7 @@ export function Features() {
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.08) 70%, transparent)" }} />
 
       <motion.div style={{ y }} className="relative h-full flex flex-col max-w-7xl mx-auto px-10 w-full py-20">
+        {/* Header */}
         <motion.div initial={{ opacity: 0, x: -40, filter: "blur(6px)" }} animate={inView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
@@ -38,32 +40,71 @@ export function Features() {
               World-class care,<br />from scan to follow-up
             </h2>
           </div>
-          <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#6b7280", maxWidth: "340px" }}>
-            Weill Cornell Medicine brings together advanced imaging technology and subspecialty expertise so you get the most accurate, actionable picture of your health.
+          <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#9ca3af", maxWidth: "320px" }}>
+            Hover each card to learn more
           </p>
         </motion.div>
 
+        {/* Cards — description reveals on hover */}
         <div className="grid grid-cols-2 lg:grid-cols-4 flex-1 gap-0"
           style={{ border: "1px solid rgba(0,0,0,0.08)", borderRadius: "8px", overflow: "hidden" }}
         >
           {features.map((feat, i) => {
             const Icon = feat.icon;
+            const isHovered = hovered === i;
             return (
               <motion.div key={i}
-                initial={{ opacity: 0, y: 40, scale: 0.92, filter: "blur(4px)" }} animate={inView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : {}} transition={{ duration: 0.5, delay: i * 0.12, type: "spring", stiffness: 100, damping: 18 }}
-                className="group relative flex flex-col cursor-default bg-white overflow-hidden"
-                style={{ borderRight: (i % 4 !== 3) ? "1px solid rgba(0,0,0,0.08)" : "none", padding: "10% 8%" }}
-                whileHover={{ backgroundColor: "#fafafa" }}
+                initial={{ opacity: 0, y: 40, scale: 0.92, filter: "blur(4px)" }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : {}}
+                transition={{ duration: 0.5, delay: i * 0.12, type: "spring", stiffness: 100, damping: 18 }}
+                className="group relative flex flex-col cursor-default overflow-hidden"
+                style={{
+                  borderRight: (i % 4 !== 3) ? "1px solid rgba(0,0,0,0.08)" : "none",
+                  background: isHovered ? "#ffffff" : "#fafafa",
+                  padding: "10% 8%",
+                  transition: "background 0.3s",
+                }}
+                onHoverStart={() => setHovered(i)}
+                onHoverEnd={() => setHovered(null)}
               >
-                <motion.div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300"
-                  style={{ background: `radial-gradient(ellipse at top left, ${feat.color}08 0%, transparent 60%)` }}
+                {/* Hover glow */}
+                <motion.div className="absolute inset-0 pointer-events-none"
+                  animate={{ opacity: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  style={{ background: `radial-gradient(ellipse at top left, ${feat.color}10 0%, transparent 60%)` }}
                 />
-                <motion.div whileHover={{ scale: 1.15 }} transition={{ duration: 0.2 }} className="mb-6">
-                  <Icon className="w-7 h-7" style={{ color: feat.color }} />
+
+                {/* Icon — moves up on hover */}
+                <motion.div
+                  animate={{ marginBottom: isHovered ? "16px" : "32px" }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <motion.div
+                    animate={{ scale: isHovered ? 0.9 : 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Icon className="w-8 h-8" style={{ color: feat.color }} />
+                  </motion.div>
                 </motion.div>
-                <h3 className="mb-3" style={{ fontSize: "17px", fontWeight: 700, color: "#111827", lineHeight: 1.2 }}>{feat.title}</h3>
-                <p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7 }}>{feat.description}</p>
-                <motion.div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-300"
+
+                {/* Title */}
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#111827", lineHeight: 1.2, marginBottom: "12px" }}>
+                  {feat.title}
+                </h3>
+
+                {/* Description — hidden until hover */}
+                <motion.p
+                  animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 12, height: isHovered ? "auto" : 0 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, overflow: "hidden" }}
+                >
+                  {feat.description}
+                </motion.p>
+
+                {/* Bottom accent */}
+                <motion.div className="absolute bottom-0 left-0 h-0.5"
+                  animate={{ width: isHovered ? "100%" : "0%" }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                   style={{ background: `linear-gradient(to right, ${feat.color}, transparent)` }}
                 />
               </motion.div>

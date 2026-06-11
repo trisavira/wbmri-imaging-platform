@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { Calendar, ClipboardList, Scan, FileCheck, PhoneCall } from "lucide-react";
 
@@ -13,6 +13,7 @@ const steps = [
 export function Workflow() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [hovered, setHovered] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
 
@@ -59,18 +60,31 @@ export function Workflow() {
               return (
                 <motion.div key={i}
                   initial={{ opacity: 0, y: 50, scale: 0.88 }} animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}} transition={{ duration: 0.6, delay: 0.1 + i * 0.12, type: "spring", stiffness: 120, damping: 16 }}
-                  className="flex flex-col items-center text-center"
+                  className="flex flex-col items-center text-center cursor-default"
+                  onHoverStart={() => setHovered(i)}
+                  onHoverEnd={() => setHovered(null)}
                 >
                   <motion.div
                     className="w-[72px] h-[72px] rounded-full flex items-center justify-center mb-5 relative z-10"
-                    style={{ background: "rgba(255,255,255,0.04)", border: `1px solid ${step.color}35` }}
-                    whileHover={{ borderColor: step.color, background: `${step.color}12`, boxShadow: `0 0 28px ${step.color}35` }}
-                    transition={{ duration: 0.2 }}
+                    animate={{ borderColor: hovered === i ? step.color : `${step.color}35`, background: hovered === i ? `${step.color}18` : "rgba(255,255,255,0.04)", boxShadow: hovered === i ? `0 0 32px ${step.color}45` : "none" }}
+                    style={{ border: `1px solid ${step.color}35` }}
+                    transition={{ duration: 0.25 }}
                   >
-                    <Icon className="w-6 h-6" style={{ color: step.color }} />
+                    <motion.div animate={{ scale: hovered === i ? 1.15 : 1 }} transition={{ duration: 0.25 }}>
+                      <Icon className="w-6 h-6" style={{ color: step.color }} />
+                    </motion.div>
                   </motion.div>
                   <p style={{ fontSize: "14px", fontWeight: 700, color: "#e2e8f0", marginBottom: "8px" }}>{step.title}</p>
-                  <p style={{ fontSize: "12px", color: "#64748b", lineHeight: 1.65 }}>{step.detail}</p>
+                  <motion.p
+                    animate={{ opacity: hovered === i ? 1 : 0, y: hovered === i ? 0 : 8, height: hovered === i ? "auto" : 0 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ fontSize: "12px", color: "#94a3b8", lineHeight: 1.65, overflow: "hidden" }}
+                  >{step.detail}</motion.p>
+                  <motion.span
+                    animate={{ opacity: hovered === i ? 0 : 1 }}
+                    transition={{ duration: 0.2 }}
+                    style={{ fontSize: "11px", color: step.color, fontFamily: "monospace", marginTop: "6px" }}
+                  >{step.time}</motion.span>
                 </motion.div>
               );
             })}

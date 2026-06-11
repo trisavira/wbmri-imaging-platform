@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { ShieldCheck, Brain, Award, Microscope, Users2, BadgeCheck } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -18,6 +18,7 @@ const specs = [
 export function Technology() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [hovered, setHovered] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const sectionY = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
   const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
@@ -82,16 +83,25 @@ export function Technology() {
                 return (
                   <motion.div key={i}
                     initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
-                    whileHover={{ y: -2, boxShadow: `0 8px 24px rgba(0,0,0,0.08)` }}
                     className="rounded-xl p-4 cursor-default bg-white"
                     style={{ border: `1px solid ${spec.color}20`, boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}
+                    animate={{ y: hovered === i ? -4 : 0, boxShadow: hovered === i ? `0 10px 28px rgba(0,0,0,0.1), 0 0 0 1px ${spec.color}30` : "0 1px 4px rgba(0,0,0,0.05)" }}
+                    transition={{ duration: 0.25 }}
+                    onHoverStart={() => setHovered(i)}
+                    onHoverEnd={() => setHovered(null)}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <Icon className="w-4 h-4" style={{ color: spec.color }} />
+                      <motion.div animate={{ scale: hovered === i ? 1.2 : 1 }} transition={{ duration: 0.2 }}>
+                        <Icon className="w-4 h-4" style={{ color: spec.color }} />
+                      </motion.div>
                       <span style={{ fontSize: "11px", color: "#6b7280" }}>{spec.title}</span>
                     </div>
                     <div className="text-transparent bg-clip-text" style={{ fontSize: "17px", fontWeight: 700, backgroundImage: `linear-gradient(135deg, ${spec.color}, ${spec.color}cc)` }}>{spec.value}</div>
-                    <div style={{ fontSize: "11px", color: "#6b7280" }}>{spec.sub}</div>
+                    <motion.div
+                      animate={{ opacity: hovered === i ? 1 : 0, y: hovered === i ? 0 : 6, height: hovered === i ? "auto" : 0 }}
+                      transition={{ duration: 0.25 }}
+                      style={{ fontSize: "11px", color: "#6b7280", overflow: "hidden" }}
+                    >{spec.sub}</motion.div>
                   </motion.div>
                 );
               })}
