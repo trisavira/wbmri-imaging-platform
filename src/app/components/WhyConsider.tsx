@@ -105,7 +105,7 @@ export function WhyConsider() {
                 />
 
                 {/* Number */}
-                <span className="shrink-0 w-8" style={{ fontSize: "12px", color: "#2a3240", fontFamily: "monospace", fontWeight: 700 }}>{p.num}</span>
+                <span className="shrink-0 w-8" style={{ fontSize: "12px", color: "#475569", fontFamily: "monospace", fontWeight: 700 }}>{p.num}</span>
 
                 {/* Icon */}
                 <motion.div
@@ -120,7 +120,7 @@ export function WhyConsider() {
                 {/* Label block */}
                 <div className="flex-1 min-w-0">
                   <div style={{ fontSize: "17px", fontWeight: 700, color: isHovered ? "#f1f5f9" : "#94a3b8", transition: "color 0.25s" }}>{p.label}</div>
-                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#2a3240", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
+                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#475569", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
                 </div>
 
                 {/* Description — revealed on hover */}
@@ -146,7 +146,7 @@ export function WhyConsider() {
           className="flex items-center gap-4"
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.05)" }} />
-          <span style={{ fontSize: "11px", color: "#2d3748", letterSpacing: "0.08em" }}>
+          <span style={{ fontSize: "11px", color: "#64748b", letterSpacing: "0.08em" }}>
             COMPLEMENTS — DOES NOT REPLACE — YOUR STANDARD PREVENTIVE SCREENINGS
           </span>
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.05)" }} />

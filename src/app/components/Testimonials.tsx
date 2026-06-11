@@ -87,7 +87,7 @@ export function Testimonials() {
 
         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 1 }}
           className="text-center mt-6"
-          style={{ fontSize: "11px", color: "#2d3748", letterSpacing: "0.04em" }}
+          style={{ fontSize: "11px", color: "#64748b", letterSpacing: "0.04em" }}
         >
           Illustrative patient experiences. Individual results may vary.
         </motion.p>

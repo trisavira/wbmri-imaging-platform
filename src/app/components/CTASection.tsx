@@ -74,7 +74,7 @@ export function CTASection() {
               </div>
             </motion.a>
 
-            <p className="mt-5" style={{ fontSize: "12px", color: "#3d4960", lineHeight: 1.6 }}>
+            <p className="mt-5" style={{ fontSize: "12px", color: "#64748b", lineHeight: 1.6 }}>
               In most cases not covered by insurance. Payment required at time of appointment.
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ export function CTASection() {
                       />
                       Request Appointment <ArrowRight className="w-4 h-4" />
                     </motion.button>
-                    <p className="text-center" style={{ fontSize: "11px", color: "#3d4960" }}>
+                    <p className="text-center" style={{ fontSize: "11px", color: "#64748b" }}>
                       Or call directly: <a href="tel:2127466000" style={{ color: "#e7751d", textDecoration: "none" }}>212-746-6000</a>
                     </p>
                   </form>

@@ -26,7 +26,7 @@ export function Navbar() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        background: scrolled ? "rgba(12,14,21,0.97)" : "rgba(12,14,21,0.6)",
+        background: scrolled ? "rgba(12,14,21,0.98)" : "rgba(12,14,21,0.85)",
         backdropFilter: "blur(20px)",
         borderBottom: scrolled ? "1px solid rgba(179,27,27,0.2)" : "1px solid rgba(255,255,255,0.04)",
         boxShadow: scrolled ? "0 4px 32px rgba(0,0,0,0.5)" : "none",
@@ -42,9 +42,9 @@ export function Navbar() {
           {navLinks.map((link) => (
             <a key={link.label} href={link.href}
               className="px-3 py-2 rounded-md transition-colors"
-              style={{ fontSize: "13px", color: "#94a3b8", textDecoration: "none" }}
+              style={{ fontSize: "13px", color: "#cbd5e1", textDecoration: "none" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#ffffff"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.06)"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#94a3b8"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#cbd5e1"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
             >
               {link.label}
             </a>
@@ -52,7 +52,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="tel:2127466000" style={{ fontSize: "13px", color: "#64748b", textDecoration: "none" }}>212-746-6000</a>
+          <a href="tel:2127466000" style={{ fontSize: "13px", color: "#94a3b8", textDecoration: "none" }}>212-746-6000</a>
           <motion.a href="#contact"
             className="px-5 py-2 rounded-sm text-white"
             style={{ background: "linear-gradient(135deg, #cf4520, #b31b1b)", fontSize: "13px", fontWeight: 600, textDecoration: "none", boxShadow: "0 0 20px rgba(179,27,27,0.3)" }}

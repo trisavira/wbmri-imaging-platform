@@ -162,7 +162,7 @@ export function Hero() {
             />
           </div>
           <div className="flex justify-between mt-1.5">
-            <span style={{ fontSize: "10px", color: "#3d4960" }}>Scanning</span>
+            <span style={{ fontSize: "10px", color: "#64748b" }}>Scanning</span>
             <span style={{ fontSize: "10px", color: "#cf4520", fontWeight: 600 }}>72%</span>
           </div>
         </motion.div>
@@ -173,7 +173,7 @@ export function Hero() {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }}
         style={{ opacity: contentOpacity }}
       >
-        <span style={{ fontSize: "10px", color: "#3d4960", letterSpacing: "0.12em" }}>SCROLL</span>
+        <span style={{ fontSize: "10px", color: "#64748b", letterSpacing: "0.12em" }}>SCROLL</span>
         <motion.div className="w-px h-8" style={{ background: "linear-gradient(to bottom, rgba(179,27,27,0.6), transparent)" }}
           animate={{ scaleY: [0, 1, 0], originY: 0 }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         />
