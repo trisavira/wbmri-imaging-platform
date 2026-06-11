@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from "motion/react";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const faqs = [
   {
@@ -44,7 +44,7 @@ const faqs = [
 export function FAQ() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
 
@@ -89,11 +89,8 @@ export function FAQ() {
                   style={{ padding: "16px 20px", background: "none", border: "none", cursor: "pointer" }}
                 >
                   <span style={{ fontSize: "14px", fontWeight: 600, color: "#111827", lineHeight: 1.4 }}>{faq.q}</span>
-                  <motion.div animate={{ rotate: open === i ? 45 : 0 }} transition={{ duration: 0.2 }} className="shrink-0">
-                    {open === i
-                      ? <Minus className="w-4 h-4" style={{ color: "#b31b1b" }} />
-                      : <Plus className="w-4 h-4" style={{ color: "#9ca3af" }} />
-                    }
+                  <motion.div animate={{ rotate: open === i ? 45 : 0 }} transition={{ duration: 0.25 }} className="shrink-0">
+                    <Plus className="w-4 h-4" style={{ color: open === i ? "#b31b1b" : "#9ca3af" }} />
                   </motion.div>
                 </button>
                 <AnimatePresence initial={false}>
