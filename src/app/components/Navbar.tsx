@@ -3,11 +3,11 @@ import { motion, useScroll } from "motion/react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "About",          href: "#platform" },
+  { label: "What Is It",     href: "#what-is-wb-mri" },
+  { label: "What It Detects",href: "#body-explorer" },
   { label: "What to Expect", href: "#workflow" },
-  { label: "What We Detect", href: "#body-explorer" },
-  { label: "Why WCM",        href: "#technology" },
-  { label: "Clinical Data",  href: "#clinical" },
+  { label: "Why WCM",        href: "#platform" },
+  { label: "FAQ",            href: "#faq" },
 ];
 
 export function Navbar() {
