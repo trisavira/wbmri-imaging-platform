@@ -28,7 +28,7 @@ export function Workflow() {
 
       <motion.div style={{ y }} className="relative h-full flex flex-col justify-between max-w-7xl mx-auto px-10 w-full py-20">
         {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
+        <motion.div initial={{ opacity: 0, y: 30, filter: "blur(8px)" }} animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
             <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>WHAT TO EXPECT</span>
@@ -58,7 +58,7 @@ export function Workflow() {
               const Icon = step.icon;
               return (
                 <motion.div key={i}
-                  initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
+                  initial={{ opacity: 0, y: 50, scale: 0.88 }} animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}} transition={{ duration: 0.6, delay: 0.1 + i * 0.12, type: "spring", stiffness: 120, damping: 16 }}
                   className="flex flex-col items-center text-center"
                 >
                   <motion.div

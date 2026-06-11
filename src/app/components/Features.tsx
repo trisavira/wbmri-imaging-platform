@@ -26,7 +26,7 @@ export function Features() {
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.08) 70%, transparent)" }} />
 
       <motion.div style={{ y }} className="relative h-full flex flex-col max-w-7xl mx-auto px-10 w-full py-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}
+        <motion.div initial={{ opacity: 0, x: -40, filter: "blur(6px)" }} animate={inView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"
         >
           <div>
@@ -50,7 +50,7 @@ export function Features() {
             const Icon = feat.icon;
             return (
               <motion.div key={i}
-                initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: i * 0.08 }}
+                initial={{ opacity: 0, y: 40, scale: 0.92, filter: "blur(4px)" }} animate={inView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : {}} transition={{ duration: 0.5, delay: i * 0.12, type: "spring", stiffness: 100, damping: 18 }}
                 className="group relative flex flex-col cursor-default bg-white overflow-hidden"
                 style={{ borderRight: (i % 4 !== 3) ? "1px solid rgba(0,0,0,0.08)" : "none", padding: "10% 8%" }}
                 whileHover={{ backgroundColor: "#fafafa" }}

@@ -54,7 +54,7 @@ export function CTASection() {
 
             <div className="space-y-3 mb-10">
               {benefits.map((b, i) => (
-                <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
+                <motion.div key={i} initial={{ opacity: 0, x: -40, filter: "blur(4px)" }} animate={inView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}} transition={{ duration: 0.55, delay: 0.2 + i * 0.1, type: "spring", stiffness: 120, damping: 18 }}
                   className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#e7751d" }} />
                   <span style={{ fontSize: "14px", color: "#94a3b8" }}>{b}</span>
@@ -80,7 +80,7 @@ export function CTASection() {
           </motion.div>
 
           {/* Right form */}
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}>
+          <motion.div initial={{ opacity: 0, x: 60, scale: 0.95, filter: "blur(6px)" }} animate={inView ? { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" } : {}} transition={{ duration: 0.8, delay: 0.25, type: "spring", stiffness: 80, damping: 18 }}>
             <div className="rounded-2xl p-8 relative overflow-hidden"
               style={{ background: "rgba(10,22,40,0.9)", border: "1px solid rgba(255,255,255,0.07)", boxShadow: "0 0 60px rgba(179,27,27,0.06), 0 24px 60px rgba(0,0,0,0.4)" }}>
               <motion.div className="absolute inset-0 pointer-events-none"

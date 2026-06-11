@@ -28,7 +28,7 @@ export function StatsBar() {
       <div className="relative h-full grid grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, i) => (
           <motion.div key={i}
-            initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: i * 0.12 }}
+            initial={{ opacity: 0, y: 60, scale: 0.85, filter: "blur(8px)" }} animate={inView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : {}} transition={{ duration: 0.7, delay: i * 0.15, type: "spring", stiffness: 90, damping: 15 }}
             className="group relative flex flex-col items-center justify-center text-center h-full px-8"
             style={{ borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
           >
