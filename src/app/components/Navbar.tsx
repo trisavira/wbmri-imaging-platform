@@ -46,8 +46,6 @@ export function Navbar() {
             {/* ── New York-Presbyterian ── */}
             <text x="13" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#e03131">New York-Presbyterian</text>
 
-            {/* ── Divider ── */}
-            <line x1="115" y1="24" x2="115" y2="37" stroke="#4b5563" strokeWidth="0.8"/>
 
             {/* ── Cornell seal (simplified circle) ── */}
             <circle cx="123.5" cy="30.5" r="5" fill="none" stroke="#8b1818" strokeWidth="1.1"/>
