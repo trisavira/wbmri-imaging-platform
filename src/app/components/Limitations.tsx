@@ -45,11 +45,11 @@ export function Limitations() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>RESPONSIBLE CLINICAL POSITIONING</span>
             </div>
-            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em", maxWidth: "680px" }}>
+            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#111111", lineHeight: 1.1, letterSpacing: "-0.025em", maxWidth: "680px" }}>
               A complement to your care —{" "}
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>not a replacement</span>
             </h2>
-            <p className="mt-4" style={{ fontSize: "16px", color: "#6b7280", maxWidth: "580px", lineHeight: 1.75 }}>
+            <p className="mt-4" style={{ fontSize: "16px", color: "#666666", maxWidth: "580px", lineHeight: 1.75 }}>
               Whole-Body MRI is a powerful tool for early detection and peace of mind. We believe it's equally important to be clear about what it is — and what it is not.
             </p>
           </motion.div>
@@ -60,13 +60,13 @@ export function Limitations() {
               className="rounded-2xl p-7"
               style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
             >
-              <h3 className="mb-5" style={{ fontSize: "16px", fontWeight: 700, color: "#111827" }}>What Whole-Body MRI adds to your care</h3>
+              <h3 className="mb-5" style={{ fontSize: "16px", fontWeight: 700, color: "#111111" }}>What Whole-Body MRI adds to your care</h3>
               <ul className="space-y-3">
                 {complements.map((item, i) => (
                   <motion.li key={i} initial={{ opacity: 0, x: -16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.3 + i * 0.07 }}
                     className="flex items-start gap-3"
-                    style={{ fontSize: "14px", color: "#374151", lineHeight: 1.6 }}
+                    style={{ fontSize: "14px", color: "#333333", lineHeight: 1.6 }}
                   >
                     <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#b31b1b" }} />
                     {item}
@@ -80,7 +80,7 @@ export function Limitations() {
               className="rounded-2xl p-7"
               style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
             >
-              <h3 className="mb-5" style={{ fontSize: "16px", fontWeight: 700, color: "#111827" }}>What it does not replace</h3>
+              <h3 className="mb-5" style={{ fontSize: "16px", fontWeight: 700, color: "#111111" }}>What it does not replace</h3>
               <ul className="space-y-3">
                 {doesNotReplace.map((item, i) => (
                   <motion.li key={i} initial={{ opacity: 0, x: 16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -89,7 +89,7 @@ export function Limitations() {
                   >
                     <XCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#9ca3af" }} />
                     <div>
-                      <div style={{ fontSize: "14px", fontWeight: 600, color: "#374151" }}>{item.screen}</div>
+                      <div style={{ fontSize: "14px", fontWeight: 600, color: "#333333" }}>{item.screen}</div>
                       <div style={{ fontSize: "12px", color: "#9ca3af", lineHeight: 1.5 }}>{item.reason}</div>
                     </div>
                   </motion.li>

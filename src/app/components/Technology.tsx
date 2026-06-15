@@ -58,7 +58,7 @@ export function Technology() {
                 <span className="text-transparent bg-clip-text" style={{ fontSize: "24px", fontWeight: 700, backgroundImage: "linear-gradient(135deg, #0f1117, #374151)" }}>3T</span>
                 <span style={{ fontSize: "13px", color: "#e7751d" }}>Wide-bore Scanner</span>
               </div>
-              <p style={{ fontSize: "12px", color: "#6b7280" }}>Weill Cornell Imaging</p>
+              <p style={{ fontSize: "12px", color: "#666666" }}>Weill Cornell Imaging</p>
             </motion.div>
           </motion.div>
 
@@ -69,10 +69,10 @@ export function Technology() {
                 <div className="h-px w-8" style={{ background: "#b31b1b" }} />
                 <span style={{ fontSize: "12px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>OUR TECHNOLOGY & EXPERTISE</span>
               </div>
-              <h2 className="mb-3" style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.2 }}>
+              <h2 className="mb-3" style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)", fontWeight: 700, color: "#111111", lineHeight: 1.2 }}>
                 Advanced imaging meets <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>expert oversight</span>
               </h2>
-              <p className="mb-8" style={{ fontSize: "14px", lineHeight: 1.7, color: "#6b7280", maxWidth: "380px" }}>
+              <p className="mb-8" style={{ fontSize: "14px", lineHeight: 1.7, color: "#666666", maxWidth: "380px" }}>
                 Our state-of-the-art 3T scanners combined with AI-enhanced protocols and subspecialty radiologist review deliver clinical-grade precision for your preventive care.
               </p>
             </motion.div>
@@ -94,13 +94,13 @@ export function Technology() {
                       <motion.div animate={{ scale: hovered === i ? 1.2 : 1 }} transition={{ duration: 0.2 }}>
                         <Icon className="w-4 h-4" style={{ color: spec.color }} />
                       </motion.div>
-                      <span style={{ fontSize: "11px", color: "#6b7280" }}>{spec.title}</span>
+                      <span style={{ fontSize: "11px", color: "#666666" }}>{spec.title}</span>
                     </div>
                     <div className="text-transparent bg-clip-text" style={{ fontSize: "17px", fontWeight: 700, backgroundImage: `linear-gradient(135deg, ${spec.color}, ${spec.color}cc)` }}>{spec.value}</div>
                     <motion.div
                       animate={{ opacity: hovered === i ? 1 : 0, y: hovered === i ? 0 : 6, height: hovered === i ? "auto" : 0 }}
                       transition={{ duration: 0.25 }}
-                      style={{ fontSize: "11px", color: "#6b7280", overflow: "hidden" }}
+                      style={{ fontSize: "11px", color: "#666666", overflow: "hidden" }}
                     >{spec.sub}</motion.div>
                   </motion.div>
                 );

@@ -35,14 +35,14 @@ export function WhatIsWBMRI() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>WHAT IS WHOLE-BODY MRI</span>
             </div>
-            <h2 className="mb-6" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
+            <h2 className="mb-6" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#111111", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
               A comprehensive scan<br />of your entire body —<br />
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>in a single session</span>
             </h2>
-            <p className="mb-6" style={{ fontSize: "16px", lineHeight: 1.85, color: "#374151", maxWidth: "480px" }}>
+            <p className="mb-6" style={{ fontSize: "16px", lineHeight: 1.85, color: "#333333", maxWidth: "480px" }}>
               Whole-Body MRI is a radiation-free imaging examination that produces thousands of high-resolution images from your head to mid-thigh. Unlike standard MRI scans that focus on a single area, Whole-Body MRI gives your care team a complete picture of your tissues and organs in one visit.
             </p>
-            <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#6b7280", maxWidth: "460px" }}>
+            <p style={{ fontSize: "15px", lineHeight: 1.8, color: "#666666", maxWidth: "460px" }}>
               At Weill Cornell Medicine, every scan is reviewed by subspecialty radiologists — physicians who specialize in specific body regions — ensuring that findings are interpreted with the highest level of clinical expertise.
             </p>
           </motion.div>
@@ -64,8 +64,8 @@ export function WhatIsWBMRI() {
                     style={{ background: "rgba(179,27,27,0.07)" }}>
                     <Icon className="w-5 h-5" style={{ color: "#b31b1b" }} />
                   </div>
-                  <div style={{ fontSize: "16px", fontWeight: 700, color: "#111827", marginBottom: "6px" }}>{fact.label}</div>
-                  <div style={{ fontSize: "13px", color: "#6b7280", lineHeight: 1.6 }}>{fact.detail}</div>
+                  <div style={{ fontSize: "16px", fontWeight: 700, color: "#111111", marginBottom: "6px" }}>{fact.label}</div>
+                  <div style={{ fontSize: "13px", color: "#666666", lineHeight: 1.6 }}>{fact.detail}</div>
                 </motion.div>
               );
             })}

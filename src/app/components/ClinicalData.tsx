@@ -49,11 +49,11 @@ export function ClinicalData() {
             <motion.div className="h-px w-8" style={{ background: "#b31b1b" }}
               animate={{ width: [32, 48, 32] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
           </div>
-          <h2 className="mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, color: "#0f1117" }}>
+          <h2 className="mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, color: "#111111" }}>
             Can WB-MRI find it?{" "}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>See the evidence.</span>
           </h2>
-          <p style={{ fontSize: "16px", color: "#4b5563" }}>Our scanning protocols are validated across 10,000+ cases and published in peer-reviewed journals — so you can trust what we find.</p>
+          <p style={{ fontSize: "16px", color: "#444444" }}>Our scanning protocols are validated across 10,000+ cases and published in peer-reviewed journals — so you can trust what we find.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-5">
@@ -64,12 +64,12 @@ export function ClinicalData() {
             className="rounded-2xl p-6"
             style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
           >
-            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111827", marginBottom: "4px" }}>Diagnostic Accuracy</h3>
-            <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "16px" }}>Validated across 6 clinical dimensions</p>
+            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111111", marginBottom: "4px" }}>Diagnostic Accuracy</h3>
+            <p style={{ fontSize: "12px", color: "#666666", marginBottom: "16px" }}>Validated across 6 clinical dimensions</p>
             <ResponsiveContainer width="100%" height={220}>
               <RadarChart data={radarData}>
                 <PolarGrid stroke="rgba(0,0,0,0.08)" />
-                <PolarAngleAxis dataKey="subject" tick={{ fill: "#4b5563", fontSize: 10 }} stroke="transparent" />
+                <PolarAngleAxis dataKey="subject" tick={{ fill: "#444444", fontSize: 10 }} stroke="transparent" />
                 <Radar name="Performance" dataKey="value" stroke="#cf4520" fill="#cf4520" fillOpacity={0.12} strokeWidth={2} />
               </RadarChart>
             </ResponsiveContainer>
@@ -82,8 +82,8 @@ export function ClinicalData() {
             className="rounded-2xl p-6"
             style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", gridColumn: "span 2" }}
           >
-            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111827", marginBottom: "4px" }}>Detection Volume Trend</h3>
-            <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "16px" }}>AI flagged vs. confirmed findings per month</p>
+            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111111", marginBottom: "4px" }}>Detection Volume Trend</h3>
+            <p style={{ fontSize: "12px", color: "#666666", marginBottom: "16px" }}>AI flagged vs. confirmed findings per month</p>
             <ResponsiveContainer width="100%" height={220}>
               <AreaChart data={timelineData} margin={{ top: 5, right: 10, bottom: 0, left: -20 }}>
                 <defs>
@@ -95,9 +95,9 @@ export function ClinicalData() {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.07)" />
-                <XAxis dataKey="month" tick={{ fill: "#4b5563", fontSize: 11 }} stroke="transparent" />
-                <YAxis tick={{ fill: "#4b5563", fontSize: 11 }} stroke="transparent" />
-                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid rgba(207,69,32,0.2)", borderRadius: "8px", fontSize: "12px", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} labelStyle={{ color: "#374151" }} itemStyle={{ color: "#374151" }} />
+                <XAxis dataKey="month" tick={{ fill: "#444444", fontSize: 11 }} stroke="transparent" />
+                <YAxis tick={{ fill: "#444444", fontSize: 11 }} stroke="transparent" />
+                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid rgba(207,69,32,0.2)", borderRadius: "8px", fontSize: "12px", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} labelStyle={{ color: "#333333" }} itemStyle={{ color: "#333333" }} />
                 <Area type="monotone" dataKey="detected" name="AI Detected" stroke="#e7751d" strokeWidth={2} fill="url(#gradDetected)" />
                 <Area type="monotone" dataKey="confirmed" name="Confirmed" stroke="#b31b1b" strokeWidth={2} fill="url(#gradConfirmed)" />
               </AreaChart>
@@ -106,7 +106,7 @@ export function ClinicalData() {
               {[{ color: "#e7751d", label: "AI Detected" }, { color: "#b31b1b", label: "Confirmed" }].map(({ color, label }) => (
                 <div key={label} className="flex items-center gap-1.5">
                   <div className="w-2 h-2 rounded-full" style={{ background: color }} />
-                  <span style={{ fontSize: "11px", color: "#6b7280" }}>{label}</span>
+                  <span style={{ fontSize: "11px", color: "#666666" }}>{label}</span>
                 </div>
               ))}
             </div>
@@ -119,13 +119,13 @@ export function ClinicalData() {
             className="rounded-2xl p-6"
             style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", gridColumn: "span 3" }}
           >
-            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111827", marginBottom: "4px" }}>Diagnostic Accuracy by Finding Type</h3>
-            <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "20px" }}>Detection accuracy across primary clinical use cases</p>
+            <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111111", marginBottom: "4px" }}>Diagnostic Accuracy by Finding Type</h3>
+            <p style={{ fontSize: "12px", color: "#666666", marginBottom: "20px" }}>Detection accuracy across primary clinical use cases</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {findings.map((f, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.5 + i * 0.1 }}>
                   <div className="flex justify-between mb-2">
-                    <span style={{ fontSize: "12px", color: "#374151" }}>{f.label}</span>
+                    <span style={{ fontSize: "12px", color: "#333333" }}>{f.label}</span>
                     <span style={{ fontSize: "13px", fontWeight: 700, color: f.color, fontFamily: "monospace" }}>{f.accuracy}%</span>
                   </div>
                   <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(0,0,0,0.07)" }}>

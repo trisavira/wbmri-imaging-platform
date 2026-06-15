@@ -93,8 +93,7 @@ export function WhyConsider() {
                   borderTop: i === 0 ? "1px solid rgba(0,0,0,0.06)" : "none",
                   background: isHovered ? "#f0f4f8" : "#ffffff",
                   transition: "background 0.25s",
-                  borderRadius: "8px",
-                  marginBottom: "6px",
+                  borderRadius: "0",
                 }}
               >
                 {/* Accent line */}
@@ -114,13 +113,13 @@ export function WhyConsider() {
                   className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
                   style={{ background: isHovered ? `${p.color}12` : "rgba(0,0,0,0.03)", border: `1px solid ${isHovered ? p.color + "30" : "rgba(0,0,0,0.08)"}`, transition: "background 0.25s, border-color 0.25s" }}
                 >
-                  <Icon className="w-5 h-5" style={{ color: isHovered ? p.color : "#6b7280" }} />
+                  <Icon className="w-5 h-5" style={{ color: isHovered ? p.color : "#666666" }} />
                 </motion.div>
 
                 {/* Label block */}
                 <div className="flex-1 min-w-0">
-                  <div style={{ fontSize: "17px", fontWeight: 700, color: isHovered ? "#111827" : "#1e293b", transition: "color 0.25s" }}>{p.label}</div>
-                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#6b7280", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
+                  <div style={{ fontSize: "17px", fontWeight: 700, color: isHovered ? "#111111" : "#111111", transition: "color 0.25s" }}>{p.label}</div>
+                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#666666", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
                 </div>
 
                 {/* Description — revealed on hover */}
@@ -128,7 +127,7 @@ export function WhyConsider() {
                   animate={{ opacity: isHovered ? 1 : 0, x: isHovered ? 0 : 16 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="hidden lg:block"
-                  style={{ fontSize: "13px", color: "#4b5563", lineHeight: 1.65, maxWidth: "380px", pointerEvents: "none" }}
+                  style={{ fontSize: "13px", color: "#444444", lineHeight: 1.65, maxWidth: "380px", pointerEvents: "none" }}
                 >
                   {p.description}
                 </motion.p>

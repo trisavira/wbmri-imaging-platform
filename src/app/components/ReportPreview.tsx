@@ -16,7 +16,7 @@ const regions: { label: string; status: Status; finding: string; detail: string 
 const statusConfig = {
   normal:  { label: "Normal",              color: "#10b981", bg: "rgba(16,185,129,0.08)",  border: "rgba(16,185,129,0.2)",  icon: CheckCircle2 },
   review:  { label: "Follow-up Suggested", color: "#e7751d", bg: "rgba(231,117,29,0.08)", border: "rgba(231,117,29,0.25)", icon: AlertCircle },
-  pending: { label: "Pending",             color: "#6b7280", bg: "rgba(107,114,128,0.08)", border: "rgba(107,114,128,0.2)",icon: Clock },
+  pending: { label: "Pending",             color: "#666666", bg: "rgba(107,114,128,0.08)", border: "rgba(107,114,128,0.2)",icon: Clock },
 };
 
 export function ReportPreview() {
@@ -47,13 +47,13 @@ export function ReportPreview() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>YOUR REPORT EXPERIENCE</span>
             </div>
-            <h2 className="mb-5" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
+            <h2 className="mb-5" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#111111", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
               Clear findings,<br />
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
                 plain language
               </span>
             </h2>
-            <p className="mb-6" style={{ fontSize: "15px", lineHeight: 1.85, color: "#374151" }}>
+            <p className="mb-6" style={{ fontSize: "15px", lineHeight: 1.85, color: "#333333" }}>
               Your report is organized by body region — written in plain language, with annotated images. Subspecialty radiologists review every finding so you get clinical context, not just data.
             </p>
             <ul className="space-y-3">
@@ -66,7 +66,7 @@ export function ReportPreview() {
                 <motion.li key={i} initial={{ opacity: 0, x: -16 }} animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.08 }}
                   className="flex items-center gap-3"
-                  style={{ fontSize: "14px", color: "#4b5563" }}
+                  style={{ fontSize: "14px", color: "#444444" }}
                 >
                   <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#b31b1b" }} />
                   {item}
@@ -84,7 +84,7 @@ export function ReportPreview() {
             {/* Report header */}
             <div className="px-5 py-4" style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "rgba(179,27,27,0.04)" }}>
               <div style={{ fontSize: "11px", color: "#9ca3af", letterSpacing: "0.08em", marginBottom: "2px" }}>WEILL CORNELL MEDICINE · WHOLE BODY MRI</div>
-              <div style={{ fontSize: "15px", fontWeight: 600, color: "#111827" }}>Sample Report — Illustrative Only</div>
+              <div style={{ fontSize: "15px", fontWeight: 600, color: "#111111" }}>Sample Report — Illustrative Only</div>
               <div style={{ fontSize: "12px", color: "#9ca3af", marginTop: "2px" }}>Click any region to expand</div>
             </div>
 
@@ -105,7 +105,7 @@ export function ReportPreview() {
                       transition={{ delay: 0.3 + i * 0.06 }}
                     >
                       <Icon className="w-4 h-4 shrink-0" style={{ color: sc.color }} />
-                      <span style={{ fontSize: "13px", fontWeight: 600, color: "#111827", flex: 1 }}>{r.label}</span>
+                      <span style={{ fontSize: "13px", fontWeight: 600, color: "#111111", flex: 1 }}>{r.label}</span>
                       <span className="px-2 py-0.5 rounded-full" style={{ fontSize: "10px", color: sc.color, background: sc.bg, border: `1px solid ${sc.border}`, fontWeight: 600 }}>
                         {sc.label}
                       </span>
@@ -124,7 +124,7 @@ export function ReportPreview() {
                         >
                           <div className="px-5 pb-4 pl-12">
                             <div style={{ fontSize: "12px", fontWeight: 600, color: sc.color, marginBottom: "4px" }}>{r.finding}</div>
-                            <div style={{ fontSize: "12px", color: "#6b7280", lineHeight: 1.7 }}>{r.detail}</div>
+                            <div style={{ fontSize: "12px", color: "#666666", lineHeight: 1.7 }}>{r.detail}</div>
                           </div>
                         </motion.div>
                       )}

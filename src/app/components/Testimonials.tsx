@@ -73,12 +73,12 @@ export function Testimonials() {
             >
               <Quote className="w-8 h-8 mb-4 flex-shrink-0" style={{ color: t.typeColor, opacity: 0.6 }} />
 
-              <p className="flex-1" style={{ fontSize: "14px", lineHeight: 1.8, color: "#374151", fontStyle: "italic" }}>
+              <p className="flex-1" style={{ fontSize: "14px", lineHeight: 1.8, color: "#333333", fontStyle: "italic" }}>
                 "{t.quote}"
               </p>
 
               <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
-                <div style={{ fontSize: "14px", fontWeight: 600, color: "#111827" }}>{t.name}</div>
+                <div style={{ fontSize: "14px", fontWeight: 600, color: "#111111" }}>{t.name}</div>
                 <div style={{ fontSize: "12px", color: "#8b96a8", marginTop: "3px" }}>{t.detail}</div>
               </div>
             </motion.div>

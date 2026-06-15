@@ -36,7 +36,7 @@ export function Features() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>WHY CHOOSE WEILL CORNELL</span>
             </div>
-            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#0f1117", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
+            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#111111", lineHeight: 1.1, letterSpacing: "-0.025em" }}>
               World-class care,<br />from scan to follow-up
             </h2>
           </div>
@@ -85,7 +85,7 @@ export function Features() {
                 </motion.div>
 
                 {/* Title */}
-                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#111827", lineHeight: 1.2, marginBottom: "12px" }}>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#111111", lineHeight: 1.2, marginBottom: "12px" }}>
                   {feat.title}
                 </h3>
 
@@ -93,7 +93,7 @@ export function Features() {
                 <motion.p
                   animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 12, height: isHovered ? "auto" : 0 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, overflow: "hidden" }}
+                  style={{ fontSize: "14px", color: "#666666", lineHeight: 1.7, overflow: "hidden" }}
                 >
                   {feat.description}
                 </motion.p>

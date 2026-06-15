@@ -272,7 +272,7 @@ export function BodyExplorer() {
                       <div className="w-3 h-3 rounded-full" style={{ background: activeRegion.color }} />
                     </div>
                     <div>
-                      <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#111827" }}>{activeRegion.label}</h3>
+                      <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#111111" }}>{activeRegion.label}</h3>
                       <div className="h-0.5 w-10 mt-1 rounded-full" style={{ background: activeRegion.color }} />
                     </div>
                   </div>
@@ -284,7 +284,7 @@ export function BodyExplorer() {
                       </h4>
                       <ul className="space-y-2">
                         {activeRegion.what.map((item) => (
-                          <li key={item} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#374151" }}>
+                          <li key={item} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#333333" }}>
                             <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: activeRegion.color }} />
                             {item}
                           </li>
@@ -297,7 +297,7 @@ export function BodyExplorer() {
                       </h4>
                       <ul className="space-y-2">
                         {activeRegion.findings.map((f) => (
-                          <li key={f} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#374151" }}>
+                          <li key={f} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#333333" }}>
                             <ChevronRight className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: "#cf4520" }} />
                             {f}
                           </li>
@@ -308,8 +308,8 @@ export function BodyExplorer() {
 
                   <div className="flex items-start gap-3 rounded-xl p-4" style={{ background: "rgba(231,117,29,0.06)", border: "1px solid rgba(231,117,29,0.18)" }}>
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#e7751d" }} />
-                    <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#374151", margin: 0 }}>
-                      <span style={{ color: "#111827", fontWeight: 600 }}>Clinical note: </span>
+                    <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#333333", margin: 0 }}>
+                      <span style={{ color: "#111111", fontWeight: 600 }}>Clinical note: </span>
                       {activeRegion.education}
                     </p>
                   </div>
@@ -339,15 +339,15 @@ export function BodyExplorer() {
                       <path d="M 20,60 L 18,95 L 28,95 L 28,68 L 32,68 L 32,95 L 42,95 L 40,60" fill="none" stroke="rgba(207,69,32,0.6)" strokeWidth="1.5" />
                     </svg>
                   </motion.div>
-                  <p style={{ fontSize: "15px", color: "#111827", fontWeight: 600, marginBottom: "6px" }}>Select a body region to explore</p>
+                  <p style={{ fontSize: "15px", color: "#111111", fontWeight: 600, marginBottom: "6px" }}>Select a body region to explore</p>
                   <p style={{ fontSize: "13px", color: "#94a3b8" }}>Click directly on the diagram or use the region buttons</p>
                   <div className="mt-6 flex flex-wrap gap-2 justify-center max-w-xs">
                     {regions.map((r) => (
                       <motion.button key={r.id} onClick={() => handleClick(r.id)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                         className="px-3 py-1.5 rounded-lg transition-all"
-                        style={{ fontSize: "12px", fontWeight: 600, background: "rgba(0,0,0,0.04)", color: "#374151", border: "1px solid rgba(0,0,0,0.1)", cursor: "pointer" }}
+                        style={{ fontSize: "12px", fontWeight: 600, background: "rgba(0,0,0,0.04)", color: "#333333", border: "1px solid rgba(0,0,0,0.1)", cursor: "pointer" }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = r.color; (e.currentTarget as HTMLElement).style.color = r.color; (e.currentTarget as HTMLElement).style.background = r.color + "15"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,0,0,0.1)"; (e.currentTarget as HTMLElement).style.color = "#374151"; (e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.04)"; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,0,0,0.1)"; (e.currentTarget as HTMLElement).style.color = "#333333"; (e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.04)"; }}
                       >
                         {r.label}
                       </motion.button>

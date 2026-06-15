@@ -69,7 +69,7 @@ export function FAQ() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>FREQUENTLY ASKED QUESTIONS</span>
             </div>
-            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, color: "#0f1117", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, color: "#111111", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
               Your questions, answered
             </h2>
           </motion.div>
@@ -103,7 +103,7 @@ export function FAQ() {
                         className="w-full flex items-center justify-between gap-4 text-left"
                         style={{ padding: "16px 20px", background: "none", border: "none", cursor: "pointer" }}
                       >
-                        <span style={{ fontSize: "14px", fontWeight: 600, color: "#111827", lineHeight: 1.4 }}>{faq.q}</span>
+                        <span style={{ fontSize: "14px", fontWeight: 600, color: "#111111", lineHeight: 1.4 }}>{faq.q}</span>
                         <motion.div animate={{ rotate: isOpen ? 45 : 0 }} transition={{ duration: 0.25 }} className="shrink-0">
                           <Plus className="w-4 h-4" style={{ color: isOpen ? "#b31b1b" : "#9ca3af" }} />
                         </motion.div>
@@ -117,7 +117,7 @@ export function FAQ() {
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             style={{ overflow: "hidden" }}
                           >
-                            <div style={{ padding: "0 20px 18px", fontSize: "13px", color: "#4b5563", lineHeight: 1.75 }}>
+                            <div style={{ padding: "0 20px 18px", fontSize: "13px", color: "#444444", lineHeight: 1.75 }}>
                               {faq.a}
                             </div>
                           </motion.div>

@@ -91,13 +91,13 @@ export function CTASection() {
                     animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 2, repeat: Infinity }}>
                     <CheckCircle className="w-7 h-7" style={{ color: "#e7751d" }} />
                   </motion.div>
-                  <h3 className="mb-2" style={{ fontSize: "20px", fontWeight: 600, color: "#111827" }}>Request Received</h3>
-                  <p style={{ fontSize: "14px", color: "#6b7280" }}>Our team will contact you within one business day to confirm your appointment.</p>
+                  <h3 className="mb-2" style={{ fontSize: "20px", fontWeight: 600, color: "#111111" }}>Request Received</h3>
+                  <p style={{ fontSize: "14px", color: "#666666" }}>Our team will contact you within one business day to confirm your appointment.</p>
                 </motion.div>
               ) : (
                 <div className="relative">
-                  <h3 className="mb-1" style={{ fontSize: "20px", fontWeight: 600, color: "#111827" }}>Request an Appointment</h3>
-                  <p className="mb-6" style={{ fontSize: "14px", color: "#6b7280" }}>We'll contact you within one business day to schedule.</p>
+                  <h3 className="mb-1" style={{ fontSize: "20px", fontWeight: 600, color: "#111111" }}>Request an Appointment</h3>
+                  <p className="mb-6" style={{ fontSize: "14px", color: "#666666" }}>We'll contact you within one business day to schedule.</p>
                   <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
                     {[
                       { label: "Full Name",    placeholder: "Dr. Sarah Johnson",          key: "name"  as const, type: "text" },
@@ -105,21 +105,21 @@ export function CTASection() {
                       { label: "Phone Number", placeholder: "212-555-0100",               key: "phone" as const, type: "tel" },
                     ].map((field) => (
                       <div key={field.key}>
-                        <label className="block mb-1.5" style={{ fontSize: "12px", color: "#374151", letterSpacing: "0.03em" }}>{field.label}</label>
+                        <label className="block mb-1.5" style={{ fontSize: "12px", color: "#333333", letterSpacing: "0.03em" }}>{field.label}</label>
                         <input type={field.type} placeholder={field.placeholder} required
                           value={form[field.key]}
                           onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                           className="w-full px-3 py-2 rounded-lg outline-none transition-all"
-                          style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#111827", fontSize: "14px" }}
+                          style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#111111", fontSize: "14px" }}
                           onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(179,27,27,0.45)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(179,27,27,0.08)"; }}
                           onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.boxShadow = "none"; }}
                         />
                       </div>
                     ))}
                     <div>
-                      <label className="block mb-1.5" style={{ fontSize: "12px", color: "#374151" }}>Preferred Appointment Time</label>
+                      <label className="block mb-1.5" style={{ fontSize: "12px", color: "#333333" }}>Preferred Appointment Time</label>
                       <select className="w-full px-3 py-2 rounded-lg outline-none"
-                        style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#374151", fontSize: "14px" }}>
+                        style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#333333", fontSize: "14px" }}>
                         <option value="">Any availability</option>
                         <option>Mornings (8am–12pm)</option>
                         <option>Afternoons (12pm–5pm)</option>
