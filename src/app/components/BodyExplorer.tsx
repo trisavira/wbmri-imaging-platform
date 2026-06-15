@@ -58,7 +58,7 @@ function getColor(id: string, activeId: string | null, hoveredId: string | null)
   const r = regions.find((r) => r.id === id);
   if (!r) return "rgba(255,255,255,0.07)";
   if (activeId === id || hoveredId === id) return r.color;
-  return "rgba(255,255,255,0.09)";
+  return "rgba(0,0,0,0.07)";
 }
 function getOp(id: string, activeId: string | null, hoveredId: string | null): number {
   return (activeId === id || hoveredId === id) ? 0.88 : 1;
@@ -71,27 +71,27 @@ function BodySVG({ activeId, hoveredId, onRegionClick, onRegionHover }: BodySVGP
   return (
     <svg viewBox="0 0 160 460" width="148" height="426" style={{ overflow: "visible", display: "block" }}>
       {/* Body silhouette (anatomical reference lines) */}
-      <g fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1">
+      <g fill="none" stroke="rgba(0,0,0,0.2)" strokeWidth="1">
         <ellipse cx="80" cy="30" rx="22" ry="26" />
         <path d="M 70,54 L 70,66 L 90,66 L 90,54" />
-        <path d="M 70,66 C 56,68 38,78 30,92 L 26,100 L 26,188 C 26,194 30,198 36,200 L 36,202 L 44,202 L 44,100 C 50,88 62,80 72,78 L 88,78 C 98,80 110,88 116,100 L 116,202 L 124,202 L 124,200 C 130,198 134,194 134,188 L 134,100 L 130,92 C 122,78 104,68 90,66" fill="rgba(255,255,255,0.05)" />
-        <path d="M 26,100 L 20,96 L 14,100 L 14,220 C 14,228 18,234 24,236 L 34,236 L 36,228 L 26,224 L 26,104" fill="rgba(255,255,255,0.03)" />
-        <path d="M 134,100 L 140,96 L 146,100 L 146,220 C 146,228 142,234 136,236 L 126,236 L 124,228 L 134,224 L 134,104" fill="rgba(255,255,255,0.03)" />
+        <path d="M 70,66 C 56,68 38,78 30,92 L 26,100 L 26,188 C 26,194 30,198 36,200 L 36,202 L 44,202 L 44,100 C 50,88 62,80 72,78 L 88,78 C 98,80 110,88 116,100 L 116,202 L 124,202 L 124,200 C 130,198 134,194 134,188 L 134,100 L 130,92 C 122,78 104,68 90,66" fill="rgba(0,0,0,0.04)" />
+        <path d="M 26,100 L 20,96 L 14,100 L 14,220 C 14,228 18,234 24,236 L 34,236 L 36,228 L 26,224 L 26,104" fill="rgba(0,0,0,0.03)" />
+        <path d="M 134,100 L 140,96 L 146,100 L 146,220 C 146,228 142,234 136,236 L 126,236 L 124,228 L 134,224 L 134,104" fill="rgba(0,0,0,0.03)" />
         <ellipse cx="24" cy="244" rx="10" ry="13" />
         <ellipse cx="136" cy="244" rx="10" ry="13" />
-        <path d="M 44,202 L 44,236 C 44,244 50,250 58,252 L 80,254 L 102,252 C 110,250 116,244 116,236 L 116,202" fill="rgba(255,255,255,0.03)" />
-        <path d="M 44,236 L 44,330 C 44,338 50,344 58,346 L 76,346 L 78,336 L 60,332 L 58,238 C 52,242 48,238 44,236 Z" fill="rgba(255,255,255,0.03)" />
-        <path d="M 116,236 L 116,330 C 116,338 110,344 102,346 L 84,346 L 82,336 L 100,332 L 102,238 C 108,242 112,238 116,236 Z" fill="rgba(255,255,255,0.03)" />
-        <path d="M 56,346 L 54,430 C 54,436 58,440 63,440 L 77,440 L 78,432 L 64,428 L 62,348" fill="rgba(255,255,255,0.03)" />
-        <path d="M 104,346 L 106,430 C 106,436 102,440 97,440 L 83,440 L 82,432 L 96,428 L 98,348" fill="rgba(255,255,255,0.03)" />
+        <path d="M 44,202 L 44,236 C 44,244 50,250 58,252 L 80,254 L 102,252 C 110,250 116,244 116,236 L 116,202" fill="rgba(0,0,0,0.03)" />
+        <path d="M 44,236 L 44,330 C 44,338 50,344 58,346 L 76,346 L 78,336 L 60,332 L 58,238 C 52,242 48,238 44,236 Z" fill="rgba(0,0,0,0.03)" />
+        <path d="M 116,236 L 116,330 C 116,338 110,344 102,346 L 84,346 L 82,336 L 100,332 L 102,238 C 108,242 112,238 116,236 Z" fill="rgba(0,0,0,0.03)" />
+        <path d="M 56,346 L 54,430 C 54,436 58,440 63,440 L 77,440 L 78,432 L 64,428 L 62,348" fill="rgba(0,0,0,0.03)" />
+        <path d="M 104,346 L 106,430 C 106,436 102,440 97,440 L 83,440 L 82,432 L 96,428 L 98,348" fill="rgba(0,0,0,0.03)" />
         <path d="M 54,434 L 48,446 L 78,446 L 78,440 L 63,440 Z" />
         <path d="M 106,434 L 112,446 L 82,446 L 82,440 L 97,440 Z" />
-        <line x1="80" y1="68" x2="80" y2="240" strokeDasharray="3,2.5" stroke="rgba(255,255,255,0.2)" />
-        <path d="M 72,74 C 62,74 50,80 40,88" stroke="rgba(255,255,255,0.12)" />
-        <path d="M 88,74 C 98,74 110,80 120,88" stroke="rgba(255,255,255,0.12)" />
-        <path d="M 46,98 C 52,112 64,120 80,122 C 96,120 108,112 114,98" strokeDasharray="2,3" stroke="rgba(255,255,255,0.1)" />
-        <path d="M 44,116 C 50,130 63,138 80,140 C 97,138 110,130 116,116" strokeDasharray="2,3" stroke="rgba(255,255,255,0.08)" />
-        <path d="M 44,212 C 50,224 62,230 80,232 C 98,230 110,224 116,212" strokeDasharray="2,3" stroke="rgba(255,255,255,0.1)" />
+        <line x1="80" y1="68" x2="80" y2="240" strokeDasharray="3,2.5" stroke="rgba(0,0,0,0.2)" />
+        <path d="M 72,74 C 62,74 50,80 40,88" stroke="rgba(0,0,0,0.12)" />
+        <path d="M 88,74 C 98,74 110,80 120,88" stroke="rgba(0,0,0,0.12)" />
+        <path d="M 46,98 C 52,112 64,120 80,122 C 96,120 108,112 114,98" strokeDasharray="2,3" stroke="rgba(0,0,0,0.1)" />
+        <path d="M 44,116 C 50,130 63,138 80,140 C 97,138 110,130 116,116" strokeDasharray="2,3" stroke="rgba(0,0,0,0.08)" />
+        <path d="M 44,212 C 50,224 62,230 80,232 C 98,230 110,224 116,212" strokeDasharray="2,3" stroke="rgba(0,0,0,0.1)" />
       </g>
 
       {/* BRAIN */}
@@ -129,7 +129,7 @@ function BodySVG({ activeId, hoveredId, onRegionClick, onRegionHover }: BodySVGP
           style={{ transition: "stroke 0.2s" }}
         />
         <text x="68" y="158" textAnchor="end" fontSize="7" fontWeight="700"
-          fill={activeId === "spine" || hoveredId === "spine" ? "#cf4520" : "rgba(207,69,32,0.7)"}
+          fill={activeId === "spine" || hoveredId === "spine" ? "#cf4520" : "rgba(207,69,32,0.8)"}
           style={{ fontFamily: "sans-serif", transition: "fill 0.2s" }}
         >Spine</text>
       </g>
@@ -183,9 +183,9 @@ function BodySVG({ activeId, hoveredId, onRegionClick, onRegionHover }: BodySVGP
         const r = regions.find((r) => r.id === id)!;
         return (
           <g key={id} style={{ pointerEvents: "none" }}>
-            <line x1={id === "brain" ? 103 : 128} y1={y} x2={x - 4} y2={y} stroke="rgba(255,255,255,0.12)" strokeWidth="0.8" />
+            <line x1={id === "brain" ? 103 : 128} y1={y} x2={x - 4} y2={y} stroke="rgba(0,0,0,0.12)" strokeWidth="0.8" />
             <text x={x} y={y + 3} fontSize="7"
-              fill={activeId === id ? r.color : "rgba(255,255,255,0.4)"}
+              fill={activeId === id ? r.color : "rgba(0,0,0,0.4)"}
               style={{ fontFamily: "sans-serif", transition: "fill 0.2s" }}
             >
               {r.label.split(" ")[0]}
@@ -247,7 +247,7 @@ export function BodyExplorer() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
             className="shrink-0 flex flex-col items-center"
           >
-            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "rgba(10,22,40,0.8)", border: "1px solid rgba(207,69,32,0.15)", boxShadow: "0 0 40px rgba(207,69,32,0.06), 0 8px 32px rgba(0,0,0,0.4)", padding: "12px 16px" }}>
+            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "#f0f4f8", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "12px 16px" }}>
               <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
             </div>
           </motion.div>
