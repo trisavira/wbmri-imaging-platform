@@ -40,9 +40,6 @@ export function Features() {
               World-class care,<br />from scan to follow-up
             </h2>
           </div>
-          <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#9ca3af", maxWidth: "320px" }}>
-            Hover each card to learn more
-          </p>
         </motion.div>
 
         {/* Cards — description reveals on hover */}

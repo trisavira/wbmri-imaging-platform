@@ -72,7 +72,6 @@ export function WhyConsider() {
               </span>
             </h2>
           </div>
-          <p style={{ fontSize: "13px", color: "#64748b" }}>Hover each row to learn more</p>
         </motion.div>
 
         {/* Profile strips */}
