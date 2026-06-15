@@ -145,7 +145,7 @@ export function WhyConsider() {
           className="flex items-center gap-4"
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.05)" }} />
-          <span style={{ fontSize: "11px", color: "#64748b", letterSpacing: "0.08em" }}>
+          <span style={{ fontSize: "11px", color: "#8b96a8", letterSpacing: "0.08em" }}>
             COMPLEMENTS — DOES NOT REPLACE — YOUR STANDARD PREVENTIVE SCREENINGS
           </span>
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.05)" }} />

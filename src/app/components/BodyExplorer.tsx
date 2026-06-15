@@ -340,7 +340,6 @@ export function BodyExplorer() {
                     </svg>
                   </motion.div>
                   <p style={{ fontSize: "15px", color: "#111111", fontWeight: 600, marginBottom: "6px" }}>Select a body region to explore</p>
-                  <p style={{ fontSize: "13px", color: "#94a3b8" }}>Click directly on the diagram or use the region buttons</p>
                   <div className="mt-6 flex flex-wrap gap-2 justify-center max-w-xs">
                     {regions.map((r) => (
                       <motion.button key={r.id} onClick={() => handleClick(r.id)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
