@@ -33,8 +33,25 @@ export function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center">
-          <img src="/wcm-logo.svg" alt="Weill Cornell Imaging" style={{ height: "38px", width: "auto" }} />
+        <a href="#" className="flex items-center shrink-0">
+          <svg width="210" height="40" viewBox="0 0 210 40" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
+            {/* Weill Cornell Imaging */}
+            <text x="0" y="17" fontFamily="'Open Sans', Helvetica, Arial, sans-serif" fontSize="17" fontWeight="700" letterSpacing="-0.3" fill="#e2e8f0">Weill Cornell Imaging</text>
+            {/* NYP double-bar icon */}
+            <rect x="0" y="25" width="2.5" height="13" fill="#e03131"/>
+            <rect x="0" y="25" width="10"  height="2.5" fill="#e03131"/>
+            <rect x="0" y="35.5" width="10" height="2.5" fill="#e03131"/>
+            {/* New York-Presbyterian */}
+            <text x="14" y="35" fontFamily="'Open Sans', Helvetica, Arial, sans-serif" fontSize="9.5" fontWeight="700" fill="#e03131">New York-Presbyterian</text>
+            {/* Separator */}
+            <line x1="116" y1="27" x2="116" y2="38" stroke="#4b5563" strokeWidth="1"/>
+            {/* Cornell crest simplified */}
+            <circle cx="125" cy="32" r="5" fill="none" stroke="#9b1212" strokeWidth="1.2"/>
+            <text x="121.5" y="34" fontFamily="serif" fontSize="4" fontWeight="700" fill="#9b1212">WCM</text>
+            {/* Weill Cornell + Medicine */}
+            <text x="133" y="35" fontFamily="'Open Sans', Helvetica, Arial, sans-serif" fontSize="9.5" fontWeight="700" fill="#9b1212">Weill Cornell </text>
+            <text x="183" y="35" fontFamily="'Open Sans', Helvetica, Arial, sans-serif" fontSize="9.5" fontWeight="700" fill="#e7751d">Medicine</text>
+          </svg>
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">
