@@ -72,7 +72,7 @@ export function WhyConsider() {
               </span>
             </h2>
           </div>
-          <p style={{ fontSize: "13px", color: "#475569" }}>Hover each row to learn more</p>
+          <p style={{ fontSize: "13px", color: "#64748b" }}>Hover each row to learn more</p>
         </motion.div>
 
         {/* Profile strips */}
@@ -105,7 +105,7 @@ export function WhyConsider() {
                 />
 
                 {/* Number */}
-                <span className="shrink-0 w-8" style={{ fontSize: "12px", color: "#475569", fontFamily: "monospace", fontWeight: 700 }}>{p.num}</span>
+                <span className="shrink-0 w-8" style={{ fontSize: "12px", color: "#8b96a8", fontFamily: "monospace", fontWeight: 700 }}>{p.num}</span>
 
                 {/* Icon */}
                 <motion.div
@@ -114,13 +114,13 @@ export function WhyConsider() {
                   className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
                   style={{ background: isHovered ? `${p.color}15` : "rgba(255,255,255,0.04)", border: `1px solid ${isHovered ? p.color + "30" : "rgba(255,255,255,0.06)"}`, transition: "background 0.25s, border-color 0.25s" }}
                 >
-                  <Icon className="w-5 h-5" style={{ color: isHovered ? p.color : "#475569" }} />
+                  <Icon className="w-5 h-5" style={{ color: isHovered ? p.color : "#8b96a8" }} />
                 </motion.div>
 
                 {/* Label block */}
                 <div className="flex-1 min-w-0">
-                  <div style={{ fontSize: "17px", fontWeight: 700, color: isHovered ? "#f1f5f9" : "#94a3b8", transition: "color 0.25s" }}>{p.label}</div>
-                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#475569", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
+                  <div style={{ fontSize: "17px", fontWeight: 700, color: isHovered ? "#f1f5f9" : "#cbd5e1", transition: "color 0.25s" }}>{p.label}</div>
+                  <div style={{ fontSize: "12px", color: isHovered ? p.color : "#8b96a8", transition: "color 0.25s", marginTop: "2px" }}>{p.sublabel}</div>
                 </div>
 
                 {/* Description — revealed on hover */}
