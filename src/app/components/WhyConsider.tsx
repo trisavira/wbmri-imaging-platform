@@ -109,7 +109,7 @@ export function WhyConsider() {
 
                 {/* Icon */}
                 <motion.div
-                  animate={{ color: isHovered ? p.color : "#334155", scale: isHovered ? 1.15 : 1 }}
+                  animate={{ color: isHovered ? p.color : "#64748b", scale: isHovered ? 1.15 : 1 }}
                   transition={{ duration: 0.2 }}
                   className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
                   style={{ background: isHovered ? `${p.color}15` : "rgba(255,255,255,0.04)", border: `1px solid ${isHovered ? p.color + "30" : "rgba(255,255,255,0.06)"}`, transition: "background 0.25s, border-color 0.25s" }}

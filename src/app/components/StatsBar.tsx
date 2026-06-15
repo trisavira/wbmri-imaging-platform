@@ -40,7 +40,7 @@ export function StatsBar() {
               {stat.value}
             </div>
             <div style={{ fontSize: "16px", fontWeight: 600, color: "#8b96a8", marginBottom: "10px" }}>{stat.label}</div>
-            <div style={{ fontSize: "13px", color: "#4a576b", maxWidth: "200px", lineHeight: 1.6 }}>{stat.desc}</div>
+            <div style={{ fontSize: "13px", color: "#8b96a8", maxWidth: "200px", lineHeight: 1.6 }}>{stat.desc}</div>
             <motion.div className="mt-8 h-px rounded-full" style={{ background: "linear-gradient(to right, #b31b1b, #e7751d)" }}
               initial={{ width: 0 }} animate={inView ? { width: 48 } : {}} transition={{ duration: 0.8, delay: 0.6 + i * 0.1 }}
             />

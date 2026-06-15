@@ -79,7 +79,7 @@ export function Testimonials() {
 
               <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                 <div style={{ fontSize: "14px", fontWeight: 600, color: "#e2e8f0" }}>{t.name}</div>
-                <div style={{ fontSize: "12px", color: "#475569", marginTop: "3px" }}>{t.detail}</div>
+                <div style={{ fontSize: "12px", color: "#8b96a8", marginTop: "3px" }}>{t.detail}</div>
               </div>
             </motion.div>
           ))}

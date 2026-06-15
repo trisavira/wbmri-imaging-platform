@@ -151,9 +151,9 @@ export function Hero() {
           animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
           transition={{ opacity: { duration: 0.7, delay: 1.0 }, x: { duration: 0.7, delay: 1.0, ease: [0.22, 1, 0.36, 1] }, y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 } }}
         >
-          <div style={{ fontSize: "11px", color: "#4a576b", marginBottom: "6px", letterSpacing: "0.06em" }}>YOUR SCAN</div>
+          <div style={{ fontSize: "11px", color: "#8b96a8", marginBottom: "6px", letterSpacing: "0.06em" }}>YOUR SCAN</div>
           <div style={{ fontSize: "16px", fontWeight: 600, color: "#ffffff", marginBottom: "2px" }}>Head to Mid-Thigh</div>
-          <div style={{ fontSize: "12px", color: "#5a6680" }}>~45 min · No contrast · No prep</div>
+          <div style={{ fontSize: "12px", color: "#8b96a8" }}>~45 min · No contrast · No prep</div>
           <div className="mt-3 h-1 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.07)" }}>
             <motion.div className="h-full rounded-full"
               style={{ background: "linear-gradient(to right, #b31b1b, #e7751d)" }}

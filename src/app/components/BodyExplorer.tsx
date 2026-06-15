@@ -237,7 +237,7 @@ export function BodyExplorer() {
           <h2 className="mb-2" style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 700, color: "#f1f5f9" }}>
             Explore What WB-MRI <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>Can Detect</span>
           </h2>
-          <p style={{ fontSize: "13px", color: "#64748b" }}>
+          <p style={{ fontSize: "13px", color: "#94a3b8" }}>
             Click any body region to see what conditions WB-MRI can identify.
           </p>
         </motion.div>
@@ -260,9 +260,9 @@ export function BodyExplorer() {
                   className="relative rounded-2xl p-7 h-full"
                   style={{ background: "rgba(10,22,40,0.9)", border: `1px solid ${activeRegion.color}30`, borderTop: `2px solid ${activeRegion.color}`, boxShadow: `0 0 40px ${activeRegion.color}10, 0 16px 48px rgba(0,0,0,0.5)` }}
                 >
-                  <button onClick={() => setActiveId(null)} style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#64748b" }}
+                  <button onClick={() => setActiveId(null)} style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#94a3b8" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#94a3b8"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#64748b"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#94a3b8"; }}
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -340,7 +340,7 @@ export function BodyExplorer() {
                     </svg>
                   </motion.div>
                   <p style={{ fontSize: "15px", color: "#94a3b8", marginBottom: "6px" }}>Select a body region to explore</p>
-                  <p style={{ fontSize: "13px", color: "#64748b" }}>Click directly on the diagram or use the region buttons</p>
+                  <p style={{ fontSize: "13px", color: "#94a3b8" }}>Click directly on the diagram or use the region buttons</p>
                   <div className="mt-6 flex flex-wrap gap-2 justify-center max-w-xs">
                     {regions.map((r) => (
                       <motion.button key={r.id} onClick={() => handleClick(r.id)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}

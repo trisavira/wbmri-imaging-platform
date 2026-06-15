@@ -96,7 +96,7 @@ export function Workflow() {
           className="flex items-center gap-4" style={{ marginTop: "8px" }}
         >
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.06)" }} />
-          <span style={{ fontSize: "11px", color: "#64748b", letterSpacing: "0.1em" }}>NO FASTING · NO CONTRAST · NO SPECIAL PREPARATION REQUIRED</span>
+          <span style={{ fontSize: "11px", color: "#94a3b8", letterSpacing: "0.1em" }}>NO FASTING · NO CONTRAST · NO SPECIAL PREPARATION REQUIRED</span>
           <div className="h-px flex-1" style={{ background: "rgba(255,255,255,0.06)" }} />
         </motion.div>
       </motion.div>

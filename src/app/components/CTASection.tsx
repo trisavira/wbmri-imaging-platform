@@ -70,11 +70,11 @@ export function CTASection() {
               <Phone className="w-5 h-5" style={{ color: "#e7751d" }} />
               <div>
                 <div style={{ fontSize: "18px", fontWeight: 700, letterSpacing: "-0.01em" }}>212-746-6000</div>
-                <div style={{ fontSize: "12px", color: "#64748b" }}>Weill Cornell Imaging — call to schedule</div>
+                <div style={{ fontSize: "12px", color: "#94a3b8" }}>Weill Cornell Imaging — call to schedule</div>
               </div>
             </motion.a>
 
-            <p className="mt-5" style={{ fontSize: "12px", color: "#64748b", lineHeight: 1.6 }}>
+            <p className="mt-5" style={{ fontSize: "12px", color: "#94a3b8", lineHeight: 1.6 }}>
               In most cases not covered by insurance. Payment required at time of appointment.
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ export function CTASection() {
                       />
                       Request Appointment <ArrowRight className="w-4 h-4" />
                     </motion.button>
-                    <p className="text-center" style={{ fontSize: "11px", color: "#64748b" }}>
+                    <p className="text-center" style={{ fontSize: "11px", color: "#94a3b8" }}>
                       Or call directly: <a href="tel:2127466000" style={{ color: "#e7751d", textDecoration: "none" }}>212-746-6000</a>
                     </p>
                   </form>
