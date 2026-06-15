@@ -33,9 +33,8 @@ export function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex flex-col leading-none">
-          <span style={{ fontSize: "14px", fontWeight: 700, color: "#f1f5f9", letterSpacing: "-0.01em" }}>Weill Cornell Medicine</span>
-          <span style={{ fontSize: "10px", letterSpacing: "0.14em", color: "#e7751d" }}>WHOLE BODY MRI</span>
+        <a href="#" className="flex items-center">
+          <img src="/wcm-logo.svg" alt="Weill Cornell Imaging" style={{ height: "38px", width: "auto" }} />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">
