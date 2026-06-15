@@ -32,7 +32,7 @@ export function Navbar() {
         boxShadow: scrolled ? "0 4px 32px rgba(0,0,0,0.5)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center shrink-0">
           <svg width="248" height="40" viewBox="0 0 248 40" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
             {/* ── Weill Cornell Imaging (main name) ── */}

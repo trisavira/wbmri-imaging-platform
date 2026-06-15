@@ -26,7 +26,7 @@ export function Features() {
       />
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.08) 70%, transparent)" }} />
 
-      <motion.div style={{ y }} className="relative h-full flex flex-col max-w-7xl mx-auto px-10 w-full py-20">
+      <motion.div style={{ y }} className="relative h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 w-full py-20">
         {/* Header */}
         <motion.div initial={{ opacity: 0, x: -40, filter: "blur(6px)" }} animate={inView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12"

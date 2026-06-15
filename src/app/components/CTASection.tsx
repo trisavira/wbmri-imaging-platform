@@ -36,7 +36,7 @@ export function CTASection() {
         animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 3, repeat: Infinity }}
       />
 
-      <motion.div style={{ y: contentY }} className="relative h-full flex items-center max-w-7xl mx-auto px-10 w-full">
+      <motion.div style={{ y: contentY }} className="relative h-full flex items-center max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           {/* Left */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>

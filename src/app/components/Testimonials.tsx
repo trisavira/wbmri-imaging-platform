@@ -44,7 +44,7 @@ export function Testimonials() {
       {/* Subtle ambient glow */}
       <div className="absolute pointer-events-none" style={{ top: "20%", left: "50%", transform: "translateX(-50%)", width: "60%", height: "60%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(179,27,27,0.05) 0%, transparent 70%)", filter: "blur(80px)" }} />
 
-      <motion.div style={{ y }} className="relative h-full flex flex-col justify-between max-w-7xl mx-auto px-10 w-full py-20">
+      <motion.div style={{ y }} className="relative h-full flex flex-col justify-between max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 w-full py-20">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 24, filter: "blur(8px)" }} animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}

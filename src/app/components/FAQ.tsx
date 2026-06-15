@@ -31,7 +31,7 @@ export function FAQ() {
         animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 4, repeat: Infinity }}
       />
 
-      <motion.div style={{ y }} className="relative h-full flex items-center max-w-6xl mx-auto px-10 w-full">
+      <motion.div style={{ y }} className="relative h-full flex items-center max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 w-full">
         <div className="w-full">
           <motion.div initial={{ opacity: 0, y: 24, filter: "blur(8px)" }} animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="mb-10"
