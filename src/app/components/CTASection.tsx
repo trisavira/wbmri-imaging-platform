@@ -82,11 +82,8 @@ export function CTASection() {
           {/* Right form */}
           <motion.div initial={{ opacity: 0, x: 60, scale: 0.95, filter: "blur(6px)" }} animate={inView ? { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" } : {}} transition={{ duration: 0.8, delay: 0.25, type: "spring", stiffness: 80, damping: 18 }}>
             <div className="rounded-2xl p-8 relative overflow-hidden"
-              style={{ background: "rgba(10,22,40,0.9)", border: "1px solid rgba(255,255,255,0.07)", boxShadow: "0 0 60px rgba(179,27,27,0.06), 0 24px 60px rgba(0,0,0,0.4)" }}>
-              <motion.div className="absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(135deg, rgba(179,27,27,0.03) 0%, transparent 50%)" }}
-                animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 4, repeat: Infinity }}
-              />
+              style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 32px rgba(0,0,0,0.1)" }}>
+
               {submitted ? (
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-10 relative">
                   <motion.div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -94,13 +91,13 @@ export function CTASection() {
                     animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 2, repeat: Infinity }}>
                     <CheckCircle className="w-7 h-7" style={{ color: "#e7751d" }} />
                   </motion.div>
-                  <h3 className="mb-2" style={{ fontSize: "20px", fontWeight: 600, color: "#d1d8e4" }}>Request Received</h3>
-                  <p style={{ fontSize: "14px", color: "#94a3b8" }}>Our team will contact you within one business day to confirm your appointment.</p>
+                  <h3 className="mb-2" style={{ fontSize: "20px", fontWeight: 600, color: "#111827" }}>Request Received</h3>
+                  <p style={{ fontSize: "14px", color: "#6b7280" }}>Our team will contact you within one business day to confirm your appointment.</p>
                 </motion.div>
               ) : (
                 <div className="relative">
-                  <h3 className="mb-1" style={{ fontSize: "20px", fontWeight: 600, color: "#d1d8e4" }}>Request an Appointment</h3>
-                  <p className="mb-6" style={{ fontSize: "14px", color: "#94a3b8" }}>We'll contact you within one business day to schedule.</p>
+                  <h3 className="mb-1" style={{ fontSize: "20px", fontWeight: 600, color: "#111827" }}>Request an Appointment</h3>
+                  <p className="mb-6" style={{ fontSize: "14px", color: "#6b7280" }}>We'll contact you within one business day to schedule.</p>
                   <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
                     {[
                       { label: "Full Name",    placeholder: "Dr. Sarah Johnson",          key: "name"  as const, type: "text" },
@@ -108,21 +105,21 @@ export function CTASection() {
                       { label: "Phone Number", placeholder: "212-555-0100",               key: "phone" as const, type: "tel" },
                     ].map((field) => (
                       <div key={field.key}>
-                        <label className="block mb-1.5" style={{ fontSize: "12px", color: "#94a3b8", letterSpacing: "0.03em" }}>{field.label}</label>
+                        <label className="block mb-1.5" style={{ fontSize: "12px", color: "#374151", letterSpacing: "0.03em" }}>{field.label}</label>
                         <input type={field.type} placeholder={field.placeholder} required
                           value={form[field.key]}
                           onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                           className="w-full px-3 py-2 rounded-lg outline-none transition-all"
-                          style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "#d1d8e4", fontSize: "14px" }}
+                          style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#111827", fontSize: "14px" }}
                           onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(179,27,27,0.45)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(179,27,27,0.08)"; }}
                           onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.boxShadow = "none"; }}
                         />
                       </div>
                     ))}
                     <div>
-                      <label className="block mb-1.5" style={{ fontSize: "12px", color: "#94a3b8" }}>Preferred Appointment Time</label>
+                      <label className="block mb-1.5" style={{ fontSize: "12px", color: "#374151" }}>Preferred Appointment Time</label>
                       <select className="w-full px-3 py-2 rounded-lg outline-none"
-                        style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "#94a3b8", fontSize: "14px" }}>
+                        style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#374151", fontSize: "14px" }}>
                         <option value="">Any availability</option>
                         <option>Mornings (8am–12pm)</option>
                         <option>Afternoons (12pm–5pm)</option>
