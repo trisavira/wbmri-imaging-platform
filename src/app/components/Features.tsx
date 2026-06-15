@@ -13,7 +13,7 @@ export function Features() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["1.5%", "-1.5%"]);
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (

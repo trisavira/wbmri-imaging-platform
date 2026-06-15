@@ -16,9 +16,9 @@ export function CTASection() {
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const orbY1 = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
-  const orbY2 = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
+  const orbY1 = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
+  const orbY2 = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["1.5%", "-1.5%"]);
 
   return (
     <section id="contact" ref={ref} className="relative overflow-hidden"

@@ -206,8 +206,8 @@ export function BodyExplorer() {
   const handleClick = (id: string) => setActiveId((prev) => (prev === id ? null : id));
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
-  const orbY1 = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["2%", "-2%"]);
+  const orbY1 = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
   const orbY2 = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (

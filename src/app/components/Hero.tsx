@@ -28,8 +28,8 @@ function WordReveal({ text, delay = 0, style }: { text: string; delay?: number; 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "7%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
   const smoothImgY = useSpring(imgY, { stiffness: 60, damping: 20 });
 

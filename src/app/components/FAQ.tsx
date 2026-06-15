@@ -20,7 +20,7 @@ export function FAQ() {
   const [openLeft, setOpenLeft] = useState<number | null>(null);
   const [openRight, setOpenRight] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["1.5%", "-1.5%"]);
 
   return (
     <section id="faq" ref={ref} className="relative overflow-hidden"

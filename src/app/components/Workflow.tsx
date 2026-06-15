@@ -15,7 +15,7 @@ export function Workflow() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [hovered, setHovered] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["1.5%", "-1.5%"]);
 
   return (
     <section id="workflow" ref={ref} className="relative overflow-hidden"

@@ -20,8 +20,8 @@ export function Technology() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [hovered, setHovered] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const sectionY = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  const sectionY = useTransform(scrollYProgress, [0, 1], ["2%", "-2%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-3%", "3%"]);
 
   return (
     <section id="technology" ref={ref} className="relative overflow-hidden"

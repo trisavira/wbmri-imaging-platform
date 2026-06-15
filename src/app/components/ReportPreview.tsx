@@ -24,7 +24,7 @@ export function ReportPreview() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [active, setActive] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["3%", "-3%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["1.5%", "-1.5%"]);
 
   return (
     <section id="report-preview" ref={ref} className="relative overflow-hidden"

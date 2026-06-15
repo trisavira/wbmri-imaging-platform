@@ -23,7 +23,7 @@ export function Limitations() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["2%", "-2%"]);
 
   return (
     <section id="limitations" ref={ref} className="relative overflow-hidden"
