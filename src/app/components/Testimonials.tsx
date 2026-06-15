@@ -69,16 +69,16 @@ export function Testimonials() {
               transition={{ duration: 0.6, delay: 0.15 + i * 0.15, type: "spring", stiffness: 90, damping: 18 }}
               whileHover={{ y: -6, boxShadow: `0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px ${t.typeColor}20` }}
               className="relative rounded-2xl flex flex-col"
-              style={{ background: "rgba(10,22,40,0.9)", border: `1px solid ${t.typeColor}18`, borderTop: `2px solid ${t.typeColor}`, padding: "28px", boxShadow: "0 4px 24px rgba(0,0,0,0.3)" }}
+              style={{ background: "#ffffff", border: `1px solid ${t.typeColor}20`, borderTop: `3px solid ${t.typeColor}`, padding: "28px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
             >
-              <Quote className="w-8 h-8 mb-4 flex-shrink-0" style={{ color: t.typeColor, opacity: 0.4 }} />
+              <Quote className="w-8 h-8 mb-4 flex-shrink-0" style={{ color: t.typeColor, opacity: 0.6 }} />
 
-              <p className="flex-1" style={{ fontSize: "14px", lineHeight: 1.8, color: "#94a3b8", fontStyle: "italic" }}>
+              <p className="flex-1" style={{ fontSize: "14px", lineHeight: 1.8, color: "#374151", fontStyle: "italic" }}>
                 "{t.quote}"
               </p>
 
-              <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <div style={{ fontSize: "14px", fontWeight: 600, color: "#e2e8f0" }}>{t.name}</div>
+              <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(0,0,0,0.07)" }}>
+                <div style={{ fontSize: "14px", fontWeight: 600, color: "#111827" }}>{t.name}</div>
                 <div style={{ fontSize: "12px", color: "#8b96a8", marginTop: "3px" }}>{t.detail}</div>
               </div>
             </motion.div>
