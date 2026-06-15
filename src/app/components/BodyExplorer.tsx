@@ -258,9 +258,9 @@ export function BodyExplorer() {
               {activeRegion ? (
                 <motion.div key={activeRegion.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
                   className="relative rounded-2xl p-7 h-full"
-                  style={{ background: "rgba(10,22,40,0.9)", border: `1px solid ${activeRegion.color}30`, borderTop: `2px solid ${activeRegion.color}`, boxShadow: `0 0 40px ${activeRegion.color}10, 0 16px 48px rgba(0,0,0,0.5)` }}
+                  style={{ background: "#ffffff", border: `1px solid ${activeRegion.color}25`, borderTop: `3px solid ${activeRegion.color}`, boxShadow: "0 4px 32px rgba(0,0,0,0.1)" }}
                 >
-                  <button onClick={() => setActiveId(null)} style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#94a3b8" }}
+                  <button onClick={() => setActiveId(null)} style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#9ca3af" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#94a3b8"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#94a3b8"; }}
                   >
@@ -272,7 +272,7 @@ export function BodyExplorer() {
                       <div className="w-3 h-3 rounded-full" style={{ background: activeRegion.color }} />
                     </div>
                     <div>
-                      <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#f1f5f9" }}>{activeRegion.label}</h3>
+                      <h3 style={{ fontSize: "20px", fontWeight: 700, color: "#111827" }}>{activeRegion.label}</h3>
                       <div className="h-0.5 w-10 mt-1 rounded-full" style={{ background: activeRegion.color }} />
                     </div>
                   </div>
@@ -284,7 +284,7 @@ export function BodyExplorer() {
                       </h4>
                       <ul className="space-y-2">
                         {activeRegion.what.map((item) => (
-                          <li key={item} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#94a3b8" }}>
+                          <li key={item} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#374151" }}>
                             <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: activeRegion.color }} />
                             {item}
                           </li>
@@ -297,7 +297,7 @@ export function BodyExplorer() {
                       </h4>
                       <ul className="space-y-2">
                         {activeRegion.findings.map((f) => (
-                          <li key={f} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#94a3b8" }}>
+                          <li key={f} className="flex items-start gap-2" style={{ fontSize: "13px", color: "#374151" }}>
                             <ChevronRight className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: "#cf4520" }} />
                             {f}
                           </li>
@@ -306,10 +306,10 @@ export function BodyExplorer() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 rounded-xl p-4" style={{ background: "rgba(231,117,29,0.05)", border: "1px solid rgba(231,117,29,0.12)" }}>
+                  <div className="flex items-start gap-3 rounded-xl p-4" style={{ background: "rgba(231,117,29,0.06)", border: "1px solid rgba(231,117,29,0.18)" }}>
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#e7751d" }} />
-                    <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#94a3b8", margin: 0 }}>
-                      <span style={{ color: "#e2e8f0", fontWeight: 600 }}>Clinical note: </span>
+                    <p style={{ fontSize: "13px", lineHeight: 1.65, color: "#374151", margin: 0 }}>
+                      <span style={{ color: "#111827", fontWeight: 600 }}>Clinical note: </span>
                       {activeRegion.education}
                     </p>
                   </div>
