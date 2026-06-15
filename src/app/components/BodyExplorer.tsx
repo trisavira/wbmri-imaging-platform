@@ -328,26 +328,26 @@ export function BodyExplorer() {
               ) : (
                 <motion.div key="placeholder" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center text-center rounded-2xl"
-                  style={{ background: "rgba(10,22,40,0.7)", border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 8px 32px rgba(0,0,0,0.3)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px" }}
+                  style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px" }}
                 >
                   <motion.div animate={{ opacity: [0.4, 0.8, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="mb-6">
                     <svg viewBox="0 0 60 100" width="60" height="100">
-                      <ellipse cx="30" cy="12" rx="10" ry="11" fill="none" stroke="rgba(207,69,32,0.4)" strokeWidth="1.5" />
-                      <path d="M 22,22 L 20,23 L 16,26 L 16,60 L 20,60 L 20,30 L 40,30 L 40,60 L 44,60 L 44,26 L 40,23 L 38,22" fill="none" stroke="rgba(207,69,32,0.4)" strokeWidth="1.5" />
-                      <path d="M 16,30 L 10,28 L 8,32 L 8,58 L 12,58 L 12,34 L 16,34" fill="none" stroke="rgba(207,69,32,0.35)" strokeWidth="1.2" />
-                      <path d="M 44,30 L 50,28 L 52,32 L 52,58 L 48,58 L 48,34 L 44,34" fill="none" stroke="rgba(207,69,32,0.35)" strokeWidth="1.2" />
-                      <path d="M 20,60 L 18,95 L 28,95 L 28,68 L 32,68 L 32,95 L 42,95 L 40,60" fill="none" stroke="rgba(207,69,32,0.4)" strokeWidth="1.5" />
+                      <ellipse cx="30" cy="12" rx="10" ry="11" fill="none" stroke="rgba(207,69,32,0.6)" strokeWidth="1.5" />
+                      <path d="M 22,22 L 20,23 L 16,26 L 16,60 L 20,60 L 20,30 L 40,30 L 40,60 L 44,60 L 44,26 L 40,23 L 38,22" fill="none" stroke="rgba(207,69,32,0.6)" strokeWidth="1.5" />
+                      <path d="M 16,30 L 10,28 L 8,32 L 8,58 L 12,58 L 12,34 L 16,34" fill="none" stroke="rgba(207,69,32,0.55)" strokeWidth="1.2" />
+                      <path d="M 44,30 L 50,28 L 52,32 L 52,58 L 48,58 L 48,34 L 44,34" fill="none" stroke="rgba(207,69,32,0.55)" strokeWidth="1.2" />
+                      <path d="M 20,60 L 18,95 L 28,95 L 28,68 L 32,68 L 32,95 L 42,95 L 40,60" fill="none" stroke="rgba(207,69,32,0.6)" strokeWidth="1.5" />
                     </svg>
                   </motion.div>
-                  <p style={{ fontSize: "15px", color: "#94a3b8", marginBottom: "6px" }}>Select a body region to explore</p>
+                  <p style={{ fontSize: "15px", color: "#111827", fontWeight: 600, marginBottom: "6px" }}>Select a body region to explore</p>
                   <p style={{ fontSize: "13px", color: "#94a3b8" }}>Click directly on the diagram or use the region buttons</p>
                   <div className="mt-6 flex flex-wrap gap-2 justify-center max-w-xs">
                     {regions.map((r) => (
                       <motion.button key={r.id} onClick={() => handleClick(r.id)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
                         className="px-3 py-1.5 rounded-lg transition-all"
-                        style={{ fontSize: "12px", fontWeight: 600, background: "rgba(255,255,255,0.04)", color: "#8b96a8", border: "1px solid rgba(255,255,255,0.07)", cursor: "pointer" }}
+                        style={{ fontSize: "12px", fontWeight: 600, background: "rgba(0,0,0,0.04)", color: "#374151", border: "1px solid rgba(0,0,0,0.1)", cursor: "pointer" }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = r.color; (e.currentTarget as HTMLElement).style.color = r.color; (e.currentTarget as HTMLElement).style.background = r.color + "15"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLElement).style.color = "#8b96a8"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,0,0,0.1)"; (e.currentTarget as HTMLElement).style.color = "#374151"; (e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.04)"; }}
                       >
                         {r.label}
                       </motion.button>
