@@ -51,7 +51,7 @@ export function FAQ() {
 
   return (
     <section id="faq" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}
     >
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.5) 30%, rgba(207,69,32,0.8) 50%, rgba(179,27,27,0.5) 70%, transparent)" }}
@@ -96,7 +96,7 @@ export function FAQ() {
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.05 + idx * 0.04 }}
                       className="rounded-xl overflow-hidden"
-                      style={{ background: "#ffffff", border: `1px solid ${isOpen ? "rgba(179,27,27,0.2)" : "rgba(0,0,0,0.07)"}`, transition: "border-color 0.2s" }}
+                      style={{ background: "#FDF8F5", border: `1px solid ${isOpen ? "rgba(179,27,27,0.2)" : "rgba(0,0,0,0.07)"}`, transition: "border-color 0.2s" }}
                     >
                       <button
                         onClick={() => setOpenIdx(isOpen ? null : i)}

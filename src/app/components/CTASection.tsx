@@ -45,7 +45,7 @@ export function CTASection() {
                 animate={{ width: [32, 48, 32] }} transition={{ duration: 3, repeat: Infinity }} />
               <span style={{ fontSize: "12px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>SCHEDULE YOUR SCAN</span>
             </div>
-            <h2 className="mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, lineHeight: 1.12, color: "#ffffff" }}>
+            <h2 className="mb-4" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, lineHeight: 1.12, color: "#FDF8F5" }}>
               Take charge of your health today
             </h2>
             <p className="mb-8" style={{ fontSize: "16px", lineHeight: 1.75, color: "#94a3b8" }}>
@@ -64,7 +64,7 @@ export function CTASection() {
 
             <motion.a href="tel:2127466000"
               className="inline-flex items-center gap-3 px-6 py-4 rounded-sm"
-              style={{ background: "rgba(179,27,27,0.12)", border: "1px solid rgba(179,27,27,0.3)", color: "#ffffff", textDecoration: "none" }}
+              style={{ background: "rgba(179,27,27,0.12)", border: "1px solid rgba(179,27,27,0.3)", color: "#FDF8F5", textDecoration: "none" }}
               whileHover={{ background: "rgba(179,27,27,0.2)", borderColor: "rgba(179,27,27,0.5)" }}
             >
               <Phone className="w-5 h-5" style={{ color: "#e7751d" }} />
@@ -82,7 +82,7 @@ export function CTASection() {
           {/* Right form */}
           <motion.div initial={{ opacity: 0, x: 60, scale: 0.95, filter: "blur(6px)" }} animate={inView ? { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" } : {}} transition={{ duration: 0.8, delay: 0.25, type: "spring", stiffness: 80, damping: 18 }}>
             <div className="rounded-2xl p-8 relative overflow-hidden"
-              style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 32px rgba(0,0,0,0.1)" }}>
+              style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 32px rgba(0,0,0,0.1)" }}>
 
               {submitted ? (
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-10 relative">
@@ -110,7 +110,7 @@ export function CTASection() {
                           value={form[field.key]}
                           onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                           className="w-full px-3 py-2 rounded-lg outline-none transition-all"
-                          style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#111111", fontSize: "14px" }}
+                          style={{ background: "#F8F2EE", border: "1px solid rgba(0,0,0,0.1)", color: "#111111", fontSize: "14px" }}
                           onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(179,27,27,0.45)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(179,27,27,0.08)"; }}
                           onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.boxShadow = "none"; }}
                         />
@@ -119,7 +119,7 @@ export function CTASection() {
                     <div>
                       <label className="block mb-1.5" style={{ fontSize: "12px", color: "#333333" }}>Preferred Appointment Time</label>
                       <select className="w-full px-3 py-2 rounded-lg outline-none"
-                        style={{ background: "#f9fafb", border: "1px solid rgba(0,0,0,0.1)", color: "#333333", fontSize: "14px" }}>
+                        style={{ background: "#F8F2EE", border: "1px solid rgba(0,0,0,0.1)", color: "#333333", fontSize: "14px" }}>
                         <option value="">Any availability</option>
                         <option>Mornings (8am–12pm)</option>
                         <option>Afternoons (12pm–5pm)</option>

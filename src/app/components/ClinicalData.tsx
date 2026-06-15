@@ -29,7 +29,7 @@ export function ClinicalData() {
   const y = useTransform(scrollYProgress, [0, 1], ["4%", "-4%"]);
 
   return (
-    <section id="clinical" ref={ref} className="relative flex items-center overflow-hidden" style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}>
+    <section id="clinical" ref={ref} className="relative flex items-center overflow-hidden" style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}>
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
 
@@ -62,7 +62,7 @@ export function ClinicalData() {
             initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
             className="rounded-2xl p-6"
-            style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
+            style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
           >
             <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111111", marginBottom: "4px" }}>Diagnostic Accuracy</h3>
             <p style={{ fontSize: "12px", color: "#666666", marginBottom: "16px" }}>Validated across 6 clinical dimensions</p>
@@ -80,7 +80,7 @@ export function ClinicalData() {
             initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 }}
             whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
             className="rounded-2xl p-6"
-            style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", gridColumn: "span 2" }}
+            style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", gridColumn: "span 2" }}
           >
             <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111111", marginBottom: "4px" }}>Detection Volume Trend</h3>
             <p style={{ fontSize: "12px", color: "#666666", marginBottom: "16px" }}>AI flagged vs. confirmed findings per month</p>
@@ -97,7 +97,7 @@ export function ClinicalData() {
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.07)" />
                 <XAxis dataKey="month" tick={{ fill: "#444444", fontSize: 11 }} stroke="transparent" />
                 <YAxis tick={{ fill: "#444444", fontSize: 11 }} stroke="transparent" />
-                <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid rgba(207,69,32,0.2)", borderRadius: "8px", fontSize: "12px", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} labelStyle={{ color: "#333333" }} itemStyle={{ color: "#333333" }} />
+                <Tooltip contentStyle={{ background: "#FDF8F5", border: "1px solid rgba(207,69,32,0.2)", borderRadius: "8px", fontSize: "12px", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} labelStyle={{ color: "#333333" }} itemStyle={{ color: "#333333" }} />
                 <Area type="monotone" dataKey="detected" name="AI Detected" stroke="#e7751d" strokeWidth={2} fill="url(#gradDetected)" />
                 <Area type="monotone" dataKey="confirmed" name="Confirmed" stroke="#b31b1b" strokeWidth={2} fill="url(#gradConfirmed)" />
               </AreaChart>
@@ -117,7 +117,7 @@ export function ClinicalData() {
             initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ y: -2, boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
             className="rounded-2xl p-6"
-            style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", gridColumn: "span 3" }}
+            style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)", gridColumn: "span 3" }}
           >
             <h3 style={{ fontSize: "15px", fontWeight: 600, color: "#111111", marginBottom: "4px" }}>Diagnostic Accuracy by Finding Type</h3>
             <p style={{ fontSize: "12px", color: "#666666", marginBottom: "20px" }}>Detection accuracy across primary clinical use cases</p>

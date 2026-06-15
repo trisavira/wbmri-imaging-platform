@@ -28,7 +28,7 @@ export function ReportPreview() {
 
   return (
     <section id="report-preview" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
@@ -79,7 +79,7 @@ export function ReportPreview() {
           <motion.div initial={{ opacity: 0, x: 40, scale: 0.96 }} animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 80, damping: 18 }}
             className="rounded-2xl overflow-hidden"
-            style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.1)", boxShadow: "0 4px 32px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06)" }}
+            style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.1)", boxShadow: "0 4px 32px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.06)" }}
           >
             {/* Report header */}
             <div className="px-5 py-4" style={{ borderBottom: "1px solid rgba(0,0,0,0.07)", background: "rgba(179,27,27,0.04)" }}>

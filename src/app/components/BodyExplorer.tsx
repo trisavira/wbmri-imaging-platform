@@ -247,7 +247,7 @@ export function BodyExplorer() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
             className="shrink-0 flex flex-col items-center"
           >
-            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "#f0f4f8", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "12px 16px" }}>
+            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "#EDE7E1", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "12px 16px" }}>
               <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
             </div>
           </motion.div>
@@ -258,7 +258,7 @@ export function BodyExplorer() {
               {activeRegion ? (
                 <motion.div key={activeRegion.id} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
                   className="relative rounded-2xl p-7 h-full"
-                  style={{ background: "#ffffff", border: `1px solid ${activeRegion.color}25`, borderTop: `3px solid ${activeRegion.color}`, boxShadow: "0 4px 32px rgba(0,0,0,0.1)" }}
+                  style={{ background: "#FDF8F5", border: `1px solid ${activeRegion.color}25`, borderTop: `3px solid ${activeRegion.color}`, boxShadow: "0 4px 32px rgba(0,0,0,0.1)" }}
                 >
                   <button onClick={() => setActiveId(null)} style={{ position: "absolute", top: "16px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#9ca3af" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#94a3b8"; }}
@@ -328,7 +328,7 @@ export function BodyExplorer() {
               ) : (
                 <motion.div key="placeholder" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center text-center rounded-2xl"
-                  style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px" }}
+                  style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px" }}
                 >
                   <motion.div animate={{ opacity: [0.4, 0.8, 0.4] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="mb-6">
                     <svg viewBox="0 0 60 100" width="60" height="100">

@@ -17,7 +17,7 @@ export function WhatIsWBMRI() {
 
   return (
     <section id="what-is-wb-mri" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}
     >
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.5) 30%, rgba(207,69,32,0.8) 50%, rgba(179,27,27,0.5) 70%, transparent)" }}
@@ -57,7 +57,7 @@ export function WhatIsWBMRI() {
                   animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.15 + i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
                   className="rounded-2xl p-6"
-                  style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+                  style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
                   whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.09)" }}
                 >
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"

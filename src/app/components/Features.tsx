@@ -18,7 +18,7 @@ export function Features() {
 
   return (
     <section id="platform" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}
     >
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.5) 30%, rgba(207,69,32,0.8) 50%, rgba(179,27,27,0.5) 70%, transparent)" }}
@@ -57,7 +57,7 @@ export function Features() {
                 className="group relative flex flex-col cursor-default overflow-hidden"
                 style={{
                   borderRight: (i % 4 !== 3) ? "1px solid rgba(0,0,0,0.08)" : "none",
-                  background: isHovered ? "#ffffff" : "#fafafa",
+                  background: isHovered ? "#FDF8F5" : "#F8F2EE",
                   padding: "10% 8%",
                   transition: "background 0.3s",
                 }}

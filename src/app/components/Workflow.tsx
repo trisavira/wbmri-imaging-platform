@@ -35,7 +35,7 @@ export function Workflow() {
             <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>WHAT TO EXPECT</span>
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
           </div>
-          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#FDF8F5", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
             Simple, guided,{" "}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
               every step of the way

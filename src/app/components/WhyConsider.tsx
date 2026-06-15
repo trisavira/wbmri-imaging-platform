@@ -65,7 +65,7 @@ export function WhyConsider() {
               <div className="h-px w-8" style={{ background: "#b31b1b" }} />
               <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>IS THIS RIGHT FOR YOU</span>
             </div>
-            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#FDF8F5", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
               Who benefits most from{" "}
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #e7751d, #b31b1b)" }}>
                 Whole-Body MRI
@@ -91,7 +91,7 @@ export function WhyConsider() {
                   padding: "18px 24px",
                   borderBottom: i < profiles.length - 1 ? "1px solid rgba(0,0,0,0.06)" : "none",
                   borderTop: i === 0 ? "1px solid rgba(0,0,0,0.06)" : "none",
-                  background: isHovered ? "#f0f4f8" : "#ffffff",
+                  background: isHovered ? "#EDE7E1" : "#FDF8F5",
                   transition: "background 0.25s",
                   borderRadius: "0",
                 }}

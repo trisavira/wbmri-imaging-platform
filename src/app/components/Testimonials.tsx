@@ -55,7 +55,7 @@ export function Testimonials() {
             <span style={{ fontSize: "11px", color: "#b31b1b", letterSpacing: "0.12em", fontWeight: 600 }}>PATIENT EXPERIENCES</span>
             <div className="h-px w-8" style={{ background: "#b31b1b" }} />
           </div>
-          <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 700, color: "#FDF8F5", letterSpacing: "-0.025em", lineHeight: 1.1 }}>
             In their own words
           </h2>
         </motion.div>
@@ -69,7 +69,7 @@ export function Testimonials() {
               transition={{ duration: 0.6, delay: 0.15 + i * 0.15, type: "spring", stiffness: 90, damping: 18 }}
               whileHover={{ y: -6, boxShadow: `0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px ${t.typeColor}20` }}
               className="relative rounded-2xl flex flex-col"
-              style={{ background: "#ffffff", border: `1px solid ${t.typeColor}20`, borderTop: `3px solid ${t.typeColor}`, padding: "28px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
+              style={{ background: "#FDF8F5", border: `1px solid ${t.typeColor}20`, borderTop: `3px solid ${t.typeColor}`, padding: "28px", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
             >
               <Quote className="w-8 h-8 mb-4 flex-shrink-0" style={{ color: t.typeColor, opacity: 0.6 }} />
 

@@ -25,7 +25,7 @@ export function Technology() {
 
   return (
     <section id="technology" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
@@ -52,7 +52,7 @@ export function Technology() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={inView ? { opacity: 1, scale: 1, y: [0, -8, 0] } : {}}
               transition={{ opacity: { duration: 0.5, delay: 0.5 }, scale: { duration: 0.5, delay: 0.5 }, y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 } }}
               className="absolute -bottom-8 -right-4 rounded-xl p-4"
-              style={{ background: "#ffffff", border: "1px solid rgba(179,27,27,0.2)", boxShadow: "0 12px 40px rgba(0,0,0,0.12)" }}
+              style={{ background: "#FDF8F5", border: "1px solid rgba(179,27,27,0.2)", boxShadow: "0 12px 40px rgba(0,0,0,0.12)" }}
             >
               <div className="flex items-baseline gap-1.5 mb-0.5">
                 <span className="text-transparent bg-clip-text" style={{ fontSize: "24px", fontWeight: 700, backgroundImage: "linear-gradient(135deg, #0f1117, #374151)" }}>3T</span>

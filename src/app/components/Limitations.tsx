@@ -27,7 +27,7 @@ export function Limitations() {
 
   return (
     <section id="limitations" ref={ref} className="relative overflow-hidden"
-      style={{ background: "#f8f9fb", height: "100vh", scrollSnapAlign: "start" }}
+      style={{ background: "#F8F2EE", height: "100vh", scrollSnapAlign: "start" }}
     >
       <motion.div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
         style={{ background: "linear-gradient(to right, transparent, rgba(179,27,27,0.5) 30%, rgba(207,69,32,0.8) 50%, rgba(179,27,27,0.5) 70%, transparent)" }}
@@ -58,7 +58,7 @@ export function Limitations() {
             {/* What it adds */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-2xl p-7"
-              style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+              style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
             >
               <h3 className="mb-5" style={{ fontSize: "16px", fontWeight: 700, color: "#111111" }}>What Whole-Body MRI adds to your care</h3>
               <ul className="space-y-3">
@@ -78,7 +78,7 @@ export function Limitations() {
             {/* What it doesn't replace */}
             <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 }}
               className="rounded-2xl p-7"
-              style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
+              style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}
             >
               <h3 className="mb-5" style={{ fontSize: "16px", fontWeight: 700, color: "#111111" }}>What it does not replace</h3>
               <ul className="space-y-3">

@@ -59,7 +59,7 @@ export function Hero() {
 
         {/* Headline — word by word */}
         <h1 style={{ fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.025em" }}>
-          <WordReveal text="Early Detection." delay={0.1} style={{ color: "#ffffff" }} />
+          <WordReveal text="Early Detection." delay={0.1} style={{ color: "#FDF8F5" }} />
           <span style={{ display: "block" }}>
             {["Greater", "Peace"].map((word, i) => (
               <motion.span key={word}
@@ -71,7 +71,7 @@ export function Hero() {
               >{word}</motion.span>
             ))}
           </span>
-          <WordReveal text="of Mind." delay={0.55} style={{ color: "#ffffff" }} />
+          <WordReveal text="of Mind." delay={0.55} style={{ color: "#FDF8F5" }} />
         </h1>
 
         {/* Subtitle */}
@@ -103,7 +103,7 @@ export function Hero() {
           <motion.a href="#workflow"
             className="flex items-center gap-2 px-7 py-3.5 rounded-sm"
             style={{ background: "transparent", color: "#94a3b8", fontSize: "14px", fontWeight: 600, textDecoration: "none", border: "1px solid rgba(255,255,255,0.12)" }}
-            whileHover={{ borderColor: "rgba(255,255,255,0.3)", color: "#ffffff", background: "rgba(255,255,255,0.04)" }}
+            whileHover={{ borderColor: "rgba(255,255,255,0.3)", color: "#FDF8F5", background: "rgba(255,255,255,0.04)" }}
             whileTap={{ scale: 0.96 }}
           >
             What to Expect <ChevronRight className="w-4 h-4" />
@@ -152,7 +152,7 @@ export function Hero() {
           transition={{ opacity: { duration: 0.7, delay: 1.0 }, x: { duration: 0.7, delay: 1.0, ease: [0.22, 1, 0.36, 1] }, y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 } }}
         >
           <div style={{ fontSize: "11px", color: "#8b96a8", marginBottom: "6px", letterSpacing: "0.06em" }}>YOUR SCAN</div>
-          <div style={{ fontSize: "16px", fontWeight: 600, color: "#ffffff", marginBottom: "2px" }}>Head to Mid-Thigh</div>
+          <div style={{ fontSize: "16px", fontWeight: 600, color: "#FDF8F5", marginBottom: "2px" }}>Head to Mid-Thigh</div>
           <div style={{ fontSize: "12px", color: "#8b96a8" }}>~45 min · No contrast · No prep</div>
           <div className="mt-3 h-1 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.07)" }}>
             <motion.div className="h-full rounded-full"

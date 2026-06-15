@@ -43,7 +43,7 @@ export function Navbar() {
             <a key={link.label} href={link.href}
               className="px-3 py-2 rounded-md transition-colors"
               style={{ fontSize: "13px", color: "#cbd5e1", textDecoration: "none" }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#ffffff"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.06)"; }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FDF8F5"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.06)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#cbd5e1"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
             >
               {link.label}
