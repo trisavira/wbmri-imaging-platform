@@ -247,7 +247,7 @@ export function BodyExplorer() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
             className="shrink-0 flex flex-col items-center"
           >
-            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "#EDE7E1", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "12px 16px" }}>
+            <div className="relative rounded-2xl flex items-center justify-center" style={{ background: "#FDF8F5", border: "1px solid rgba(0,0,0,0.08)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)", padding: "12px 16px" }}>
               <BodySVG activeId={activeId} hoveredId={hoveredId} onRegionClick={handleClick} onRegionHover={setHoveredId} />
             </div>
           </motion.div>
