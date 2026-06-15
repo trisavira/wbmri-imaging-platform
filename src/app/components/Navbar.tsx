@@ -39,21 +39,21 @@ export function Navbar() {
             <text x="0" y="15" fontFamily="Helvetica, Arial, sans-serif" fontSize="15" fontWeight="700" letterSpacing="-0.2" fill="#e2e8f0">Weill Cornell Imaging</text>
 
             {/* ── NYP bar icon ── */}
-            <rect x="0"  y="23" width="2" height="12" fill="#e03131"/>
-            <rect x="0"  y="23" width="9" height="2.2" fill="#e03131"/>
-            <rect x="0"  y="32.8" width="9" height="2.2" fill="#e03131"/>
+            <rect x="0"  y="23" width="2" height="12" fill="#ffffff"/>
+            <rect x="0"  y="23" width="9" height="2.2" fill="#ffffff"/>
+            <rect x="0"  y="32.8" width="9" height="2.2" fill="#ffffff"/>
 
             {/* ── New York-Presbyterian ── */}
-            <text x="13" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#e03131">New York-Presbyterian</text>
+            <text x="13" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#ffffff">New York-Presbyterian</text>
 
 
             {/* ── Cornell seal (simplified circle) ── */}
-            <circle cx="123.5" cy="30.5" r="5" fill="none" stroke="#8b1818" strokeWidth="1.1"/>
-            <text x="120" y="32.5" fontFamily="serif" fontSize="3.8" fontWeight="700" fill="#8b1818">WCM</text>
+            <circle cx="123.5" cy="30.5" r="5" fill="none" stroke="#ffffff" strokeWidth="1.1"/>
+            <text x="120" y="32.5" fontFamily="serif" fontSize="3.8" fontWeight="700" fill="#ffffff">WCM</text>
 
             {/* ── Weill Cornell Medicine ── */}
-            <text x="131" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#8b1818">Weill Cornell </text>
-            <text x="185" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#e7751d">Medicine</text>
+            <text x="131" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#ffffff">Weill Cornell </text>
+            <text x="185" y="33" fontFamily="Helvetica, Arial, sans-serif" fontSize="8.5" fontWeight="700" fill="#ffffff">Medicine</text>
           </svg>
         </a>
 
